@@ -36,13 +36,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@transcend-io/type-utils", "npm:1.0.4"],
-            ["@types/chai", "npm:4.2.22"],
             ["@types/mocha", "npm:9.0.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.2.0"],
             ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.2.0"],
             ["@yarnpkg/pnpify", "npm:3.1.0"],
             ["@yarnpkg/sdks", "npm:2.5.0"],
-            ["chai", "npm:4.3.4"],
             ["depcheck", "npm:1.4.2"],
             ["eslint", "npm:7.32.0"],
             ["eslint-config-airbnb-base", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:14.2.1"],
@@ -52,7 +50,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsdoc", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:36.1.1"],
             ["fp-ts", "npm:2.11.5"],
             ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"],
-            ["io-ts-types", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:0.5.16"],
             ["mocha", "npm:8.4.0"],
             ["prettier", "npm:2.4.1"],
             ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.4.0"],
@@ -400,13 +397,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@transcend-io/airgap.js-types", "workspace:."],
             ["@transcend-io/type-utils", "npm:1.0.4"],
-            ["@types/chai", "npm:4.2.22"],
             ["@types/mocha", "npm:9.0.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.2.0"],
             ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.2.0"],
             ["@yarnpkg/pnpify", "npm:3.1.0"],
             ["@yarnpkg/sdks", "npm:2.5.0"],
-            ["chai", "npm:4.3.4"],
             ["depcheck", "npm:1.4.2"],
             ["eslint", "npm:7.32.0"],
             ["eslint-config-airbnb-base", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:14.2.1"],
@@ -416,7 +411,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsdoc", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:36.1.1"],
             ["fp-ts", "npm:2.11.5"],
             ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"],
-            ["io-ts-types", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:0.5.16"],
             ["mocha", "npm:8.4.0"],
             ["prettier", "npm:2.4.1"],
             ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.4.0"],
@@ -482,15 +476,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/keyv", "npm:3.1.3"],
             ["@types/node", "npm:16.11.6"],
             ["@types/responselike", "npm:1.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@types/chai", [
-        ["npm:4.2.22", {
-          "packageLocation": "./.yarn/cache/@types-chai-npm-4.2.22-557883092e-dca66a263b.zip/node_modules/@types/chai/",
-          "packageDependencies": [
-            ["@types/chai", "npm:4.2.22"]
           ],
           "linkType": "HARD",
         }]
@@ -1325,15 +1310,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["assertion-error", [
-        ["npm:1.1.0", {
-          "packageLocation": "./.yarn/cache/assertion-error-npm-1.1.0-66b893015e-fd9429d3a3.zip/node_modules/assertion-error/",
-          "packageDependencies": [
-            ["assertion-error", "npm:1.1.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["astral-regex", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/astral-regex-npm-2.0.0-f30d866aab-876231688c.zip/node_modules/astral-regex/",
@@ -1479,21 +1455,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["chai", [
-        ["npm:4.3.4", {
-          "packageLocation": "./.yarn/cache/chai-npm-4.3.4-808f3b5355-772c522b3b.zip/node_modules/chai/",
-          "packageDependencies": [
-            ["chai", "npm:4.3.4"],
-            ["assertion-error", "npm:1.1.0"],
-            ["check-error", "npm:1.0.2"],
-            ["deep-eql", "npm:3.0.1"],
-            ["get-func-name", "npm:2.0.0"],
-            ["pathval", "npm:1.1.1"],
-            ["type-detect", "npm:4.0.8"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["chalk", [
         ["npm:2.4.2", {
           "packageLocation": "./.yarn/cache/chalk-npm-2.4.2-3ea16dd91e-ec3661d38f.zip/node_modules/chalk/",
@@ -1520,15 +1481,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:4.1.2"],
             ["ansi-styles", "npm:4.3.0"],
             ["supports-color", "npm:7.2.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["check-error", [
-        ["npm:1.0.2", {
-          "packageLocation": "./.yarn/cache/check-error-npm-1.0.2-00c540c6e9-d9d1065044.zip/node_modules/check-error/",
-          "packageDependencies": [
-            ["check-error", "npm:1.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -1884,16 +1836,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["decompress-response", "npm:6.0.0"],
             ["mimic-response", "npm:3.1.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["deep-eql", [
-        ["npm:3.0.1", {
-          "packageLocation": "./.yarn/cache/deep-eql-npm-3.0.1-9a66c09c65-4f4c9fb79e.zip/node_modules/deep-eql/",
-          "packageDependencies": [
-            ["deep-eql", "npm:3.0.1"],
-            ["type-detect", "npm:4.0.8"]
           ],
           "linkType": "HARD",
         }]
@@ -2742,15 +2684,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["get-func-name", [
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/get-func-name-npm-2.0.0-afbf363765-8d82e69f3e.zip/node_modules/get-func-name/",
-          "packageDependencies": [
-            ["get-func-name", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["get-intrinsic", [
         ["npm:1.1.1", {
           "packageLocation": "./.yarn/cache/get-intrinsic-npm-1.1.1-7e868745da-a9fe2ca8fa.zip/node_modules/get-intrinsic/",
@@ -3159,40 +3092,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [
             "@types/fp-ts",
             "fp-ts"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["io-ts-types", [
-        ["npm:0.5.16", {
-          "packageLocation": "./.yarn/cache/io-ts-types-npm-0.5.16-dc3d2cf03f-39b5c5639d.zip/node_modules/io-ts-types/",
-          "packageDependencies": [
-            ["io-ts-types", "npm:0.5.16"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:0.5.16", {
-          "packageLocation": "./.yarn/__virtual__/io-ts-types-virtual-82db2fe34d/0/cache/io-ts-types-npm-0.5.16-dc3d2cf03f-39b5c5639d.zip/node_modules/io-ts-types/",
-          "packageDependencies": [
-            ["io-ts-types", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:0.5.16"],
-            ["@types/fp-ts", null],
-            ["@types/io-ts", null],
-            ["@types/monocle-ts", null],
-            ["@types/newtype-ts", null],
-            ["fp-ts", "npm:2.11.5"],
-            ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"],
-            ["monocle-ts", null],
-            ["newtype-ts", null]
-          ],
-          "packagePeers": [
-            "@types/fp-ts",
-            "@types/io-ts",
-            "@types/monocle-ts",
-            "@types/newtype-ts",
-            "fp-ts",
-            "io-ts",
-            "monocle-ts",
-            "newtype-ts"
           ],
           "linkType": "HARD",
         }]
@@ -4349,15 +4248,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["pathval", [
-        ["npm:1.1.1", {
-          "packageLocation": "./.yarn/cache/pathval-npm-1.1.1-ce0311d7e0-090e314771.zip/node_modules/pathval/",
-          "packageDependencies": [
-            ["pathval", "npm:1.1.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["picocolors", [
         ["npm:1.0.0", {
           "packageLocation": "./.yarn/cache/picocolors-npm-1.0.0-d81e0b1927-a2e8092dd8.zip/node_modules/picocolors/",
@@ -5402,15 +5292,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["type-check", "npm:0.4.0"],
             ["prelude-ls", "npm:1.2.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["type-detect", [
-        ["npm:4.0.8", {
-          "packageLocation": "./.yarn/cache/type-detect-npm-4.0.8-8d8127b901-62b5628bff.zip/node_modules/type-detect/",
-          "packageDependencies": [
-            ["type-detect", "npm:4.0.8"]
           ],
           "linkType": "HARD",
         }]
