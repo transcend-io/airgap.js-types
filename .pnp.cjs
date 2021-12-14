@@ -35,8 +35,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@transcend-io/type-utils", "npm:1.0.4"],
             ["@types/chai", "npm:4.3.0"],
             ["@types/mocha", "npm:9.0.0"],
+            ["@types/node", "npm:16.11.13"],
             ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.7.0"],
             ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.7.0"],
             ["@yarnpkg/pnpify", "npm:3.1.0"],
@@ -50,7 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.25.2"],
             ["eslint-plugin-jsdoc", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:36.1.1"],
             ["fp-ts", "npm:2.11.5"],
-            ["io-ts", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.2.16"],
+            ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"],
             ["mocha", "npm:8.4.0"],
             ["prettier", "npm:2.5.1"],
             ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.4.0"],
@@ -407,8 +409,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@transcend-io/airgap.js-types", "workspace:."],
+            ["@transcend-io/type-utils", "npm:1.0.4"],
             ["@types/chai", "npm:4.3.0"],
             ["@types/mocha", "npm:9.0.0"],
+            ["@types/node", "npm:16.11.13"],
             ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.7.0"],
             ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:5.7.0"],
             ["@yarnpkg/pnpify", "npm:3.1.0"],
@@ -422,13 +426,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.25.2"],
             ["eslint-plugin-jsdoc", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:36.1.1"],
             ["fp-ts", "npm:2.11.5"],
-            ["io-ts", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.2.16"],
+            ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"],
             ["mocha", "npm:8.4.0"],
             ["prettier", "npm:2.5.1"],
             ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.4.0"],
             ["typescript", "patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=ddd1e8"]
           ],
           "linkType": "SOFT",
+        }]
+      ]],
+      ["@transcend-io/type-utils", [
+        ["npm:1.0.4", {
+          "packageLocation": "./.yarn/cache/@transcend-io-type-utils-npm-1.0.4-208c8e7303-2e73b11679.zip/node_modules/@transcend-io/type-utils/",
+          "packageDependencies": [
+            ["@transcend-io/type-utils", "npm:1.0.4"],
+            ["fp-ts", "npm:2.11.5"],
+            ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@tsconfig/node10", [
@@ -3146,10 +3161,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.2.16", {
-          "packageLocation": "./.yarn/__virtual__/io-ts-virtual-94aeb80a0e/0/cache/io-ts-npm-2.2.16-b76df10271-1b5855682e.zip/node_modules/io-ts/",
+        ["virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16", {
+          "packageLocation": "./.yarn/__virtual__/io-ts-virtual-f19c082d2b/0/cache/io-ts-npm-2.2.16-b76df10271-1b5855682e.zip/node_modules/io-ts/",
           "packageDependencies": [
-            ["io-ts", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.2.16"],
+            ["io-ts", "virtual:208c8e7303b6148b6264adda9c15f308ac94cb17b8f0c6fb16932f812f68e63e068e6ea9a6d50af4fa4a7bd7cd4189715d43307586ca407c0ed150943f25d247#npm:2.2.16"],
             ["@types/fp-ts", null],
             ["fp-ts", "npm:2.11.5"]
           ],
@@ -5169,7 +5184,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.9"],
             ["@tsconfig/node14", "npm:1.0.1"],
             ["@tsconfig/node16", "npm:1.0.2"],
-            ["@types/node", null],
+            ["@types/node", "npm:16.11.13"],
             ["@types/swc__core", null],
             ["@types/swc__wasm", null],
             ["@types/typescript", null],

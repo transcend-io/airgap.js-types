@@ -313,8 +313,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@transcend-io/airgap.js-types@workspace:."
   dependencies:
+    "@transcend-io/type-utils": ^1.0.4
     "@types/chai": ^4.2.22
     "@types/mocha": ^9.0.0
+    "@types/node": ^16.11.13
     "@typescript-eslint/eslint-plugin": ^5.1.0
     "@typescript-eslint/parser": ^5.1.0
     "@yarnpkg/pnpify": ^3.1.0-rc.2
@@ -335,6 +337,16 @@ __metadata:
     typescript: ^4.4.4
   languageName: unknown
   linkType: soft
+
+"@transcend-io/type-utils@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@transcend-io/type-utils@npm:1.0.4"
+  dependencies:
+    fp-ts: ^2.11.5
+    io-ts: ^2.2.16
+  checksum: 2e73b1167912930c99487ee24f971a997628f0264c692489f7d1de8d21d4e155324f7af747fb8023758908a1582ce9bfe7e382015ad7791db561e8b7dfbd4ecc
+  languageName: node
+  linkType: hard
 
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.8
@@ -434,7 +446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^16.11.13":
   version: 16.11.13
   resolution: "@types/node@npm:16.11.13"
   checksum: 7c9d62c024537d7c9f2229097b9e7a93a60bc60efbc9171977f172819e229b01d0b6ed276d335996d39b0096aed2cefa58c4a34b264d712ae3595449e8d96ab7
