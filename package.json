@@ -1,8 +1,8 @@
 {
   "author": "Transcend Inc.",
   "name": "@transcend-io/airgap.js-types",
-  "description": "Small package containing useful types for airgap.js and consent-manager-ui",
-  "version": "6.8.2",
+  "description": "TypeScript types for airgap.js interoperability with custom consent UIs",
+  "version": "6.8.1",
   "homepage": "https://github.com/transcend-io/airgap.js-types",
   "repository": {
     "type": "git",
@@ -44,7 +44,7 @@
     "eslint-plugin-jsdoc": "^36.1.1",
     "prettier": "^2.4.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.4.4"
   },
-  "packageManager": "yarn@3.2.0-rc.8"
+  "packageManager": "yarn@sources"
 }

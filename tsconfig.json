@@ -4,7 +4,7 @@
     "incremental": true,
     "target": "es2019",
     "module": "commonjs",
-    "lib": ["esnext", "es2020", "es2019", "dom"],
+    "lib": ["esnext", "dom"],
     "allowJs": false,
     "checkJs": false, // speeds up webpack and tsc
     "declaration": true,
