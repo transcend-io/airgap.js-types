@@ -52,7 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.4.1"],
             ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.4.0"],
             ["tslib", "npm:2.3.1"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
@@ -411,7 +411,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.4.1"],
             ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.4.0"],
             ["tslib", "npm:2.3.1"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
@@ -609,7 +609,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regexpp", "npm:3.2.0"],
             ["semver", "npm:7.3.5"],
             ["tsutils", "virtual:4337b7c990319fdab415fcb069a5a171d20905aa56a507f49cdf5038e75bfefe7b2d983a3e09510b705f62795637247c09a8117045c26c293c1746d5919cee84#npm:3.21.0"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -669,7 +669,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/typescript-estree", "virtual:5f2909c1c3bfba9545abb448e4850ef1c3ce11108ddaef14cf4dc7e06db74478183c93d3deebe9959fc589d734821dcab69363fb02d61d8062fc2cb8b641f776#npm:5.2.0"],
             ["debug", "virtual:904b3fada4a3265c4dfeed8c42d6542b5b497582d17441c86eea102109bfc3b9e1825aad904bc43dd1b94603ff4820b8cb2ebcf24cfbaf45ecee04e5bc1076b8#npm:4.3.2"],
             ["eslint", "npm:7.32.0"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -720,7 +720,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-glob", "npm:4.0.3"],
             ["semver", "npm:7.3.5"],
             ["tsutils", "virtual:4337b7c990319fdab415fcb069a5a171d20905aa56a507f49cdf5038e75bfefe7b2d983a3e09510b705f62795637247c09a8117045c26c293c1746d5919cee84#npm:3.21.0"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -4875,7 +4875,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["create-require", "npm:1.1.1"],
             ["diff", "npm:4.0.2"],
             ["make-error", "npm:1.3.6"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"],
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
             ["yn", "npm:3.1.1"]
           ],
           "packagePeers": [
@@ -4933,7 +4933,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tsutils", "virtual:4337b7c990319fdab415fcb069a5a171d20905aa56a507f49cdf5038e75bfefe7b2d983a3e09510b705f62795637247c09a8117045c26c293c1746d5919cee84#npm:3.21.0"],
             ["@types/typescript", null],
             ["tslib", "npm:1.14.1"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -4994,10 +4994,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8", {
-          "packageLocation": "./.yarn/cache/typescript-patch-d95d140154-bd629ad0da.zip/node_modules/typescript/",
+        ["patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53", {
+          "packageLocation": "./.yarn/cache/typescript-patch-7a081096b0-bd629ad0da.zip/node_modules/typescript/",
           "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
           ],
           "linkType": "HARD",
         }]
@@ -5192,7 +5192,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
   }, {basePath: basePath || __dirname});
   }
 
-/******/ (() => { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["pnpHook"] = factory();
+	else
+		root["pnpHook"] = factory();
+})(global, function() {
+return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 368:
@@ -16297,6 +16307,8 @@ if (process.mainModule === __non_webpack_module__) {
 }
 })();
 
-module.exports = __webpack_exports__.default;
+__webpack_exports__ = __webpack_exports__.default;
+/******/ 	return __webpack_exports__;
 /******/ })()
 ;
+});
