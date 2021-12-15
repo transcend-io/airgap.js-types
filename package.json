@@ -28,13 +28,11 @@
     "io-ts": "^2.2.16"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.22",
     "@types/node": "^16.11.13",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "@yarnpkg/pnpify": "^3.1.0-rc.2",
     "@yarnpkg/sdks": "^2.5.0-rc.2",
-    "chai": "^4.3.4",
     "depcheck": "^1.4.2",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
