@@ -11,6 +11,7 @@
     "composite": true,
     "declarationMap": true,
     "sourceMap": true,
+    "preserveConstEnums": true,
 
     /* Strict Type-Checking Options */
     "strict": true,
