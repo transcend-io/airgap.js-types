@@ -13,6 +13,12 @@ import {
 
 /* eslint-disable max-lines */
 
+/** Potentially applicable data privacy legal regimes */
+export const PrivacyRegime = valuesOf(PrivacyRegimeEnum);
+
+/** type overload */
+export type PrivacyRegime = t.TypeOf<typeof PrivacyRegime>;
+
 /** Transcend logger items */
 export type LogItem = {
   /** Log item content */
@@ -112,12 +118,6 @@ export const BooleanString = t.keyof({
 });
 /** Type override */
 export type BooleanString = t.TypeOf<typeof BooleanString>;
-
-/** Potentially applicable data privacy legal regimes */
-export const PrivacyRegime = valuesOf(PrivacyRegimeEnum);
-
-/** type overload */
-export type PrivacyRegime = t.TypeOf<typeof PrivacyRegime>;
 
 /** airgap.js API */
 export type AirgapAPI = Readonly<{
@@ -267,13 +267,30 @@ export const TrackingPurposeDetails = t.intersection([
   t.partial({
     /** Tracking type */
     trackingType: valuesOf(ConfigurablePurpose),
+    /** Scoped privacy regimes. All privacy regimes are in scope if undefined */
+    regimes: t.array(PrivacyRegime),
   }),
 ]);
 /** Type override */
 export type TrackingPurposeDetails = t.TypeOf<typeof TrackingPurposeDetails>;
 
+/** Tracking purpose */
+export const TrackingPurpose = t.union([
+  t.keyof(SpecialTrackingPurpose),
+  t.string,
+]);
+
+/** Type override */
+export type TrackingPurpose = t.TypeOf<typeof TrackingPurpose>;
+
+/** Tracking purposes */
+export type TrackingPurposes = Set<TrackingPurpose>;
+
 /** Tracking purposes types configuration */
-export const TrackingPurposesTypes = t.record(t.string, TrackingPurposeDetails);
+export const TrackingPurposesTypes = t.record(
+  TrackingPurpose,
+  TrackingPurposeDetails,
+);
 /** Type override */
 export type TrackingPurposesTypes = t.TypeOf<typeof TrackingPurposesTypes>;
 
@@ -329,18 +346,6 @@ export type TrackingConsentDetails = {
   /** Consent last-modified timestamp (ISO 8601) */
   timestamp: string;
 };
-
-/** Tracking purpose */
-export const TrackingPurpose = t.union([
-  t.keyof(SpecialTrackingPurpose),
-  t.string,
-]);
-
-/** Type override */
-export type TrackingPurpose = t.TypeOf<typeof TrackingPurpose>;
-
-/** Tracking purposes */
-export type TrackingPurposes = Set<TrackingPurpose>;
 
 /** User-configurable user agent privacy signal */
 export const UserPrivacySignal = t.union([
