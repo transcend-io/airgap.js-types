@@ -19,6 +19,12 @@ export type PreInitTranscendAPI = {
   readyQueue: ((transcend: TranscendAPI) => void)[];
 };
 
+/** showConsentManager() */
+export interface ShowConsentManagerOptions {
+  /** View state */
+  viewState?: InitialViewState;
+}
+
 /**
  * Transcend Consent Manager external methods
  */
