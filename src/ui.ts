@@ -6,6 +6,7 @@ import { valuesOf } from '@transcend-io/type-utils';
 
 // local
 import {
+  CustomConsentManagerStyle,
   DismissedViewState,
   InitialViewState,
   PrivacyRegimeEnum,
@@ -48,15 +49,10 @@ export type TranscendAPI = PreInitTranscendAPI & ConsentManagerAPI;
 /**
  * Custom styles
  */
-export const ConsentManagerThemeStyles = t.type({
-  /** Primary color */
-  p: t.string,
-  /** Font color */
-  primaryButton: t.string,
-  /** Font color */
-  secondaryButton: t.string,
-});
-
+export const ConsentManagerThemeStyles = t.record(
+  valuesOf(CustomConsentManagerStyle),
+  t.string,
+);
 /** Type override */
 export type ConsentManagerThemeStyles = t.TypeOf<
   typeof ConsentManagerThemeStyles
