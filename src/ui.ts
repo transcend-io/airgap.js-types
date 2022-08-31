@@ -43,7 +43,7 @@ export type ConsentManagerAPI = {
   /** Hide consent manager */
   hideConsentManager(): Promise<void>;
   /** Opt out of the sale of personal info & show a disclosure */
-  doNotSell(auth: AirgapAuth): Promise<void>;
+  doNotSell(auth: AirgapAuth, options?: ShowConsentManagerOptions): Promise<void>;
 };
 
 /** Transcend Smart Quarantine API (window.transcend) */
