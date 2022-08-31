@@ -8,6 +8,7 @@ import { applyEnum, valuesOf } from '@transcend-io/type-utils';
 import {
   ConfigurablePurpose,
   PrivacyRegimeEnum,
+  Purpose,
   SpecialTrackingPurpose,
   ViewState,
 } from './enums';
@@ -360,6 +361,7 @@ export const ConsentChange = t.record(TrackingPurpose, t.boolean);
 /** type overload */
 export type ConsentChange = t.TypeOf<typeof ConsentChange>;
 
+/** Mapping between privacy regime and consent manager UI view state */
 export const PrivacyRegimeToViewState = t.partial(
   applyEnum(PrivacyRegimeEnum, () => valuesOf(ViewState)),
 );
@@ -367,6 +369,16 @@ export const PrivacyRegimeToViewState = t.partial(
 /** type overload */
 export type PrivacyRegimeToViewState = t.TypeOf<
   typeof PrivacyRegimeToViewState
+>;
+
+/** Mapping between privacy regime and allowed consent purposes in that regime */
+export const PrivacyRegimeToAllowedPurposes = t.partial(
+  applyEnum(PrivacyRegimeEnum, () => t.array(valuesOf(Purpose))),
+);
+
+/** type overload */
+export type PrivacyRegimeToAllowedPurposes = t.TypeOf<
+  typeof PrivacyRegimeToAllowedPurposes
 >;
 
 /* eslint-enable max-lines */
