@@ -166,7 +166,7 @@ export type AirgapAPI = Readonly<{
   /** Returns true if the user is fully-opted out to all first-order tracking purposes */
   isOptedOut(): boolean;
   /** Resolve regime tracking purposes. If no regimes are provided, then the user's detected regimes are used */
-  getRegimePurposes(regimes?: PrivacyRegime[]): TrackingPurpose[];
+  getRegimePurposes(regimes?: PrivacyRegime[]): Set<TrackingPurpose>;
   /** Get initialized tracking purposes config */
   getPurposeTypes(options?: GetPurposeTypesOptions): TrackingPurposesTypes;
   /** Clear airgap queue & caches. Returns `true` on success. */
