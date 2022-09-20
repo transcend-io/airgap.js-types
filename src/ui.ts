@@ -155,5 +155,7 @@ export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: PrivacyRegimeToInitialViewSta
     // Colorado (unreachable as we don't detect this regime yet)
     CPA: InitialViewState.NoticeAndDoNotSell,
     // Other
+    UCPA: InitialViewState.Hidden,
+    // Other
     Unknown: InitialViewState.Hidden,
   };
