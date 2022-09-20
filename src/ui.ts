@@ -154,6 +154,7 @@ export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: PrivacyRegimeToInitialViewSta
     CDPA: InitialViewState.NoticeAndDoNotSell,
     // Colorado
     CPA: InitialViewState.NoticeAndDoNotSell,
+    // Utah
     // TODO: https://transcend.height.app/T-17644 - change Utah default view state once UCPA is in effect
     UCPA: InitialViewState.Hidden,
     // Other
