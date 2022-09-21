@@ -157,6 +157,8 @@ export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: PrivacyRegimeToInitialViewSta
     // Utah
     // TODO: https://transcend.height.app/T-17644 - change Utah default view state once UCPA is in effect
     UCPA: InitialViewState.Hidden,
+    // Proposed US federal privacy law
+    // ADPPA: InitialViewState.NoticeAndDoNotSell,
     // Other
     Unknown: InitialViewState.Hidden,
   };

@@ -14,4 +14,6 @@ export enum PrivacyRegimeEnum {
   CPA = 'CPA',
   /** Utah Consumer Privacy Act */
   UCPA = 'UCPA',
+  /** American Data Privacy and Protection Act */
+  // ADPPA = 'ADPPA',
 }
