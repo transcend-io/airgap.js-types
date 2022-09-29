@@ -156,7 +156,7 @@ export type AirgapAPI = Readonly<{
     /** The tracking consent options. */
     consent: TrackingConsent,
     /** Consent options */
-    confirmed?: ConsentOptions,
+    options?: ConsentOptions,
   ): boolean;
   /** Consents the user to all tracking purposes (requires recent UI interaction) */
   optIn(
