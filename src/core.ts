@@ -5,11 +5,7 @@ import * as t from 'io-ts';
 import { valuesOf } from '@transcend-io/type-utils';
 
 // local
-import {
-  ConfigurablePurpose,
-  PrivacyRegimeEnum,
-  SpecialTrackingPurpose,
-} from './enums';
+import { ConfigurablePurpose, SpecialTrackingPurpose } from './enums';
 
 /* eslint-disable max-lines */
 
