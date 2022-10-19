@@ -144,7 +144,7 @@ export type TranscendView = Window & {
 export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: PrivacyRegimeToInitialViewState =
   {
     // California
-    // TODO: https://transcend.height.app/T-17251 - migrate to DoNotSellDisclosure
+    // TODO: https://transcend.height.app/T-17251 - migrate to Hidden
     CPRA: InitialViewState.NoticeAndDoNotSell,
     // EU
     GDPR: InitialViewState.QuickOptions,
