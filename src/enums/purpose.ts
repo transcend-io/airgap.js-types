@@ -43,7 +43,7 @@ export const ConfigurablePurpose = makeEnum({
   /** SaaS tools used for functional purposes */
   Functional: 'Functional',
   /** SaaS tools used for selling personal information */
-  SaleOfInfo: 'SaleOfInfo',
+  SaleOfInfo: 'SaleOfPersonalInfo',
 });
 
 /** Type override */
