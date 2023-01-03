@@ -135,6 +135,20 @@ export type ConsentManagerConfigInput = t.TypeOf<
   typeof ConsentManagerConfigInput
 >;
 
+export const TCFConfig = t.type({
+  /** location of vendor-list.json */
+  vendorListURL: t.string,
+});
+
+/** Type override */
+export type TCFConfig = t.TypeOf<typeof TCFConfig>;
+
+/** Input for Consent manager UI configuration */
+export const TCFConfigInput = t.partial(TCFConfig.props);
+
+/** Type override */
+export type TCFConfigInput = t.TypeOf<typeof TCFConfigInput>;
+
 /**
  * Properties exposed on `self` by the Transcend Smart Quarantine
  */
