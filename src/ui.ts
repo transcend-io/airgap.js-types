@@ -136,8 +136,12 @@ export type ConsentManagerConfigInput = t.TypeOf<
 >;
 
 export const TCFConfig = t.type({
-  /** location of vendor-list.json */
+  /** Path to vendor-list.json */
   vendorListURL: t.string,
+  /** Custom CSS stylesheet */
+  css: t.string,
+  /** Path to localizations directory */
+  messages: t.string,
 });
 
 /** Type override */
