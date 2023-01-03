@@ -1,4 +1,4 @@
 export * from './core';
-export * from './tcf';
+export * from './iab';
 export * from './ui';
 export * from './enums';
