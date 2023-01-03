@@ -137,7 +137,7 @@ export type ConsentManagerConfigInput = t.TypeOf<
 
 export const TCFConfig = t.type({
   /** Path to vendor-list.json */
-  vendorListURL: t.string,
+  vendorList: t.string,
   /** Custom CSS stylesheet */
   css: t.string,
   /** Path to localizations directory */
