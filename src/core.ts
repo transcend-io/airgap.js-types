@@ -6,7 +6,6 @@ import { valuesOf } from '@transcend-io/type-utils';
 
 // local
 import { ConfigurablePurpose, SpecialTrackingPurpose } from './enums';
-import { boolean } from 'fp-ts';
 
 /* eslint-disable max-lines */
 
