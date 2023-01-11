@@ -151,6 +151,8 @@ export type AirgapAPI = Readonly<{
     /** Consent options */
     options?: ConsentOptions,
   ): boolean;
+  /** Sets whether or not the Consent UI has been shown to the user */
+  setPrompted(state: boolean): Promise<void>;
   /** Consents the user to all tracking purposes (requires recent UI interaction) */
   optIn(
     /** Airgap auth proof */
@@ -356,6 +358,8 @@ export type TrackingConsentDetails = {
   confirmed: boolean;
   /** Consent last-modified timestamp (ISO 8601) */
   timestamp: string;
+  /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
+  isPrompted: boolean | undefined;
 };
 
 /** Tracking purpose */
