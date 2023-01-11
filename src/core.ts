@@ -6,6 +6,7 @@ import { valuesOf } from '@transcend-io/type-utils';
 
 // local
 import { ConfigurablePurpose, SpecialTrackingPurpose } from './enums';
+import { boolean } from 'fp-ts';
 
 /* eslint-disable max-lines */
 
@@ -128,6 +129,8 @@ export type RegimeToPurposeScopes = [PrivacyRegime[], TrackingPurpose[]][];
 export interface ConsentOptions {
   /** Was consent confirmed by the user? */
   confirmed?: boolean;
+  /** Was the UI shown to the user? */
+  prompted?: boolean;
 }
 
 /** airgap.js API */
