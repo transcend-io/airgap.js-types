@@ -359,7 +359,7 @@ export type TrackingConsentDetails = {
   /** Consent last-modified timestamp (ISO 8601) */
   timestamp: string;
   /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
-  isPrompted: boolean | undefined;
+  prompted?: boolean;
 };
 
 /** Tracking purpose */
