@@ -154,7 +154,7 @@ export type AirgapAPI = Readonly<{
     options?: ConsentOptions,
   ): boolean;
   /** Sets whether or not the Consent UI has been shown to the user */
-  setPrompted(state: boolean): Promise<void>;
+  setPrompted(state: boolean): void;
   /** Consents the user to all tracking purposes (requires recent UI interaction) */
   optIn(
     /** Airgap auth proof */
