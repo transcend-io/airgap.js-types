@@ -17,6 +17,6 @@ export enum PrivacyRegimeEnum {
   CPA = 'CPA',
   /** Nevada Senate Bill 220 */
   NEVADA_SB220 = 'NEVADA_SB220',
-  /** New Federal Act on Data Protection */
+  /** Switzerland New Federal Act on Data Protection */
   nFADP = 'nFADP',
 }
