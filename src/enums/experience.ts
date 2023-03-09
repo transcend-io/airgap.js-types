@@ -73,7 +73,6 @@ export const RegionsOperator = makeEnum({
 export type RegionsOperator =
   typeof RegionsOperator[keyof typeof RegionsOperator];
 
-
 const DEFAULT_EXPERIENCE_PURPOSE_SCOPES = Object.fromEntries(
   DEFAULT_REGIME_TRACKING_PURPOSE_SCOPES.map(([regimes, purposes]) =>
     regimes.map((regime) => [regime, purposes]),
