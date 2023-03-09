@@ -2,7 +2,11 @@
 import * as t from 'io-ts';
 
 // main
-import { applyEnum, makeEnum, FixedLengthArray } from '@transcend-io/type-utils';
+import {
+  applyEnum,
+  makeEnum,
+  FixedLengthArray,
+} from '@transcend-io/type-utils';
 import { IsoCountryCode } from '@transcend-io/privacy-types';
 
 // local
@@ -51,9 +55,9 @@ export const DEFAULT_REGIME_PURPOSE_OPT_OUTS: RegimePurposeScopesConfig = [
 
 export interface Region {
   /** A country's ISO code */
-  country: IsoCountryCode,
+  country: IsoCountryCode;
   /** A country subdivision ISO code */
-  countrySubDivision?: string,
+  countrySubDivision?: string;
 }
 
 /**
