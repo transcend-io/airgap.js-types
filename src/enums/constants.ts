@@ -5,7 +5,7 @@ import * as t from 'io-ts';
 import { FixedLengthArray } from '@transcend-io/type-utils';
 
 // local
-import { PrivacyRegime, TrackingPurpose } from '../core';
+import type { PrivacyRegime, TrackingPurpose } from '../core';
 
 /** Regime purpose scopes configuration */
 export const RegimePurposeScopesConfig = t.array(
