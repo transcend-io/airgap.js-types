@@ -1,5 +1,8 @@
-import type { RegimePurposeScopesConfig } from './types';
-import type { PrivacyRegime, TrackingPurpose } from './core';
+import type {
+  PrivacyRegime,
+  RegimePurposeScopesConfig,
+  TrackingPurpose,
+} from './core';
 
 export const UNKNOWN_DEFAULT_EXPERIENCE = 'Unknown';
 
