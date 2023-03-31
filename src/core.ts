@@ -364,6 +364,12 @@ export type TrackingConsentDetails = {
   updated?: boolean;
   /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
   prompted?: boolean;
+  /** Transparency Consent (TCF) String */
+  tcf?: string;
+  /** US Privacy (USP) String */
+  usp?: string;
+  /** Global Privacy Platform (GPP) String */
+  gpp?: string;
 };
 
 /** Tracking purpose */
