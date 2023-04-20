@@ -82,9 +82,9 @@ export type Logger = {
    */
   tag(logTag: string, callback?: () => any): void; // eslint-disable-line @typescript-eslint/no-explicit-any
 } & {
-  /** Log emitter (e.g. `logger.log()`) */
-  [method in LogLevel]: LogEmitter;
-};
+    /** Log emitter (e.g. `logger.log()`) */
+    [method in LogLevel]: LogEmitter;
+  };
 
 /** AirgapAuth auth options */
 export type AirgapAuthMap = {
@@ -134,7 +134,7 @@ export interface ConsentOptions {
   confirmed?: boolean;
   /** Was the UI shown to the user? */
   prompted?: boolean;
-  /** Extra metadata to be synced along with consent */
+  /** Extra betadata to be synced along with consent */
   metadata?: unknown;
 }
 
@@ -222,8 +222,8 @@ export type Removable = {
 export type Stringifiable =
   | string
   | (string & {
-      toString(): string;
-    });
+    toString(): string;
+  });
 
 /** Special `defaultConsent` automatic opt-out value for any potential reason */
 export const AutoOptOut = t.literal('Auto');
@@ -382,6 +382,8 @@ export type TrackingConsentDetails = {
   airgapVersion?: string;
   /** Arbitrary metadata that customers want to be associated with consent state */
   metadata?: unknown;
+  /** When the metadata was last updated */
+  metadataTimestamp?: string;
 };
 
 /** Tracking purpose */
