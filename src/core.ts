@@ -395,8 +395,6 @@ export type TrackingConsentDetails = t.TypeOf<typeof TrackingConsentDetails>;
 export const ConsentPreferencesBody = t.type({
   /** token containing encrypted identifier */
   token: t.string,
-  /** parent organization  */
-  organizationId: t.string,
   /** consent partition (defaults to bundle id) */
   partition: t.string,
   /** user consent */
