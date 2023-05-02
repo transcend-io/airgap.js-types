@@ -82,9 +82,9 @@ export type Logger = {
    */
   tag(logTag: string, callback?: () => any): void; // eslint-disable-line @typescript-eslint/no-explicit-any
 } & {
-  /** Log emitter (e.g. `logger.log()`) */
-  [method in LogLevel]: LogEmitter;
-};
+    /** Log emitter (e.g. `logger.log()`) */
+    [method in LogLevel]: LogEmitter;
+  };
 
 /** AirgapAuth auth options */
 export type AirgapAuthMap = {
@@ -222,8 +222,8 @@ export type Removable = {
 export type Stringifiable =
   | string
   | (string & {
-      toString(): string;
-    });
+    toString(): string;
+  });
 
 /** Special `defaultConsent` automatic opt-out value for any potential reason */
 export const AutoOptOut = t.literal('Auto');
@@ -345,20 +345,22 @@ export type TrackingPurposesConfig = {
   defaultConsent?: DefaultConsentConfigValue | DefaultConsentConfig;
 };
 
-/** Tracking purpose consent config */
-export type TrackingConsent = {
-  /** Consent to tracking for essential purposes */
-  Essential?: true;
-  /** Unknown (unable to be directly consented) */
-  Unknown?: false;
-  /** Custom tracking purpose */
-  [purpose: string]: boolean | undefined;
-};
+export const TrackingConsent = t.intersection([
+  t.partial({
+    Essential: t.literal(true),
+    Unknown: t.literal(false),
+  }),
+  t.record(t.string, t.union([t.boolean, t.undefined]))
+]);
+/**
+ * Type override
+ */
+export type TrackingConsent = t.TypeOf<typeof TrackingConsent>;
 
 export const TrackingConsentDetails = t.intersection([
   t.type({
     /** Tracking consent config */
-    purposes: t.record(t.string, t.boolean),
+    purposes: TrackingConsent,
     /**
      * Was tracking consent confirmed by the user?
      * If this is false, the consent was resolved from defaults & is not yet confirmed
