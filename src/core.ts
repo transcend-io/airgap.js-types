@@ -392,14 +392,11 @@ export const TrackingConsentDetails = t.intersection([
 /** Override types. */
 export type TrackingConsentDetails = t.TypeOf<typeof TrackingConsentDetails>;
 
-export const ConsentPreferencesBody = t.intersection([
-  t.type({
-    token: t.string,
-    consentManagerId: t.string,
-    consent: TrackingConsentDetails,
-  }),
-  t.partial({ partition: t.string }),
-]);
+export const ConsentPreferencesBody = t.type({
+  token: t.string,
+  partition: t.string,
+  consent: TrackingConsentDetails,
+});
 
 /** Override types. */
 export type ConsentPreferencesBody = t.TypeOf<typeof ConsentPreferencesBody>;
