@@ -401,6 +401,9 @@ export const ConsentPreferencesBody = t.intersection([
   t.partial({ partition: t.string }),
 ]);
 
+/** Override types. */
+export type ConsentPreferencesBody = t.TypeOf<typeof ConsentPreferencesBody>;
+
 export const ConsentTokenPayload = t.intersection([
   t.type({
     encryptedIdentifier: t.string,
@@ -412,9 +415,6 @@ export const ConsentTokenPayload = t.intersection([
 
 /** Type override */
 export type ConsentTokenPayload = t.TypeOf<typeof ConsentTokenPayload>;
-
-/** Override types. */
-export type ConsentPreferencesBody = t.TypeOf<typeof ConsentPreferencesBody>;
 
 /** Tracking purpose */
 export const TrackingPurpose = t.union([
