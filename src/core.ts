@@ -82,9 +82,9 @@ export type Logger = {
    */
   tag(logTag: string, callback?: () => any): void; // eslint-disable-line @typescript-eslint/no-explicit-any
 } & {
-    /** Log emitter (e.g. `logger.log()`) */
-    [method in LogLevel]: LogEmitter;
-  };
+  /** Log emitter (e.g. `logger.log()`) */
+  [method in LogLevel]: LogEmitter;
+};
 
 /** AirgapAuth auth options */
 export type AirgapAuthMap = {
@@ -222,8 +222,8 @@ export type Removable = {
 export type Stringifiable =
   | string
   | (string & {
-    toString(): string;
-  });
+      toString(): string;
+    });
 
 /** Special `defaultConsent` automatic opt-out value for any potential reason */
 export const AutoOptOut = t.literal('Auto');
@@ -350,7 +350,7 @@ export const TrackingConsent = t.intersection([
     Essential: t.literal(true),
     Unknown: t.literal(false),
   }),
-  t.record(t.string, t.union([t.boolean, t.undefined]))
+  t.record(t.string, t.union([t.boolean, t.undefined])),
 ]);
 /**
  * Type override
