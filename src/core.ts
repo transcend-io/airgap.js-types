@@ -357,6 +357,8 @@ export type TrackingConsent = {
 
 export const TrackingConsentDetails = t.intersection([
   t.type({
+    /** Tracking consent config */
+    purposes: t.record(t.string, t.boolean),
     /**
      * Was tracking consent confirmed by the user?
      * If this is false, the consent was resolved from defaults & is not yet confirmed
@@ -368,8 +370,6 @@ export const TrackingConsentDetails = t.intersection([
   t.partial({
     /** Has the consent been updated (including no-change confirmation) since default resolution */
     updated: t.boolean,
-    /** Tracking consent config */
-    purposes: t.record(t.string, t.boolean),
     /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
     prompted: t.boolean,
     /** Transparency Consent (TCF) String */
