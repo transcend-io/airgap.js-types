@@ -355,36 +355,66 @@ export type TrackingConsent = {
   [purpose: string]: boolean | undefined;
 };
 
-/** Tracking purpose consent config with timestamp & auth metadata */
-export type TrackingConsentDetails = {
-  /** Tracking consent config */
-  purposes: TrackingConsent;
-  /**
-   * Was tracking consent confirmed by the user?
-   * If this is false, the consent was resolved from defaults & is not yet confirmed
-   */
-  confirmed: boolean;
-  /** Consent resolution/last-modified timestamp (ISO 8601) */
-  timestamp: string;
-  /** Has the consent been updated (including no-change confirmation) since default resolution */
-  updated?: boolean;
-  /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
-  prompted?: boolean;
-  /** Transparency Consent (TCF) String */
-  tcf?: string;
-  /** US Privacy (USP) String */
-  usp?: string;
-  /** Global Privacy Platform (GPP) String */
-  gpp?: string;
-  /** Consent Manager View State */
-  viewState?: ViewState;
-  /** Airgap Version */
-  airgapVersion?: string;
-  /** Arbitrary metadata that customers want to be associated with consent state */
-  metadata?: unknown;
-  /** When the metadata was last updated */
-  metadataTimestamp?: string;
-};
+export const TrackingConsentDetails = t.intersection([
+  t.type({
+    /**
+     * Was tracking consent confirmed by the user?
+     * If this is false, the consent was resolved from defaults & is not yet confirmed
+     */
+    confirmed: t.boolean,
+    /** Consent resolution/last-modified timestamp (ISO 8601) */
+    timestamp: t.string,
+  }),
+  t.partial({
+    /** Has the consent been updated (including no-change confirmation) since default resolution */
+    updated: t.boolean,
+    /** Tracking consent config */
+    purposes: t.record(t.string, t.boolean),
+    /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
+    prompted: t.boolean,
+    /** Transparency Consent (TCF) String */
+    tcf: t.string,
+    /** US Privacy (USP) String */
+    usp: t.string,
+    /** Global Privacy Platform (GPP) String */
+    gpp: t.string,
+    /** Consent Manager View State */
+    viewState: valuesOf(ViewState),
+    /** Airgap Version */
+    airgapVersion: t.string,
+    /** Arbitrary metadata that customers want to be associated with consent state */
+    metadata: t.unknown,
+    /** When the metadata was last updated */
+    metadataTimestamp: t.string,
+  }),
+]);
+
+/** Override types. */
+export type TrackingConsentDetails = t.TypeOf<typeof TrackingConsentDetails>;
+
+export const ConsentPreferencesBody = t.intersection([
+  t.type({
+    token: t.string,
+    consentManagerId: t.string,
+    consent: TrackingConsentDetails,
+  }),
+  t.partial({ partition: t.string }),
+]);
+
+export const ConsentTokenPayload = t.intersection([
+  t.type({
+    encryptedIdentifier: t.string,
+  }),
+  t.partial({
+    deprecatedEncryptedIdentifiers: t.array(t.string),
+  }),
+]);
+
+/** Type override */
+export type ConsentTokenPayload = t.TypeOf<typeof ConsentTokenPayload>;
+
+/** Override types. */
+export type ConsentPreferencesBody = t.TypeOf<typeof ConsentPreferencesBody>;
 
 /** Tracking purpose */
 export const TrackingPurpose = t.union([
