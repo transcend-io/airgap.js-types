@@ -383,6 +383,25 @@ export const TrackingConsentDetails = t.intersection([
 /** Override types. */
 export type TrackingConsentDetails = t.TypeOf<typeof TrackingConsentDetails>;
 
+export const FullTrackingConsentDetails = t.intersection([
+  TrackingConsentDetails,
+  t.partial({
+      /** Transparency Consent (TCF) String */
+      tcf: t.string,
+      /** US Privacy (USP) String */
+      usp: t.string,
+      /** Global Privacy Platform (GPP) String */
+      gpp: t.string,
+      /** Consent Manager View State */
+      viewState: valuesOf(ViewState),
+      /** Airgap Version */
+      airgapVersion: t.string,
+  })
+]);
+
+/** Override types. */
+export type FullTrackingConsentDetails = t.TypeOf<typeof FullTrackingConsentDetails>;
+
 export const ConsentPreferencesBody = t.type({
   /** token containing encrypted identifier */
   token: t.string,
