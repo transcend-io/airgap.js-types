@@ -8,7 +8,6 @@ import { FixedLengthArray, valuesOf } from '@transcend-io/type-utils';
 import {
   ConfigurablePurpose,
   SpecialTrackingPurpose,
-  ViewState,
 } from './enums';
 
 /* eslint-disable max-lines */
