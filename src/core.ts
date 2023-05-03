@@ -374,16 +374,6 @@ export const TrackingConsentDetails = t.intersection([
     updated: t.boolean,
     /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
     prompted: t.boolean,
-    /** Transparency Consent (TCF) String */
-    tcf: t.string,
-    /** US Privacy (USP) String */
-    usp: t.string,
-    /** Global Privacy Platform (GPP) String */
-    gpp: t.string,
-    /** Consent Manager View State */
-    viewState: valuesOf(ViewState),
-    /** Airgap Version */
-    airgapVersion: t.string,
     /** Arbitrary metadata that customers want to be associated with consent state */
     metadata: t.unknown,
     /** When the metadata was last updated */
