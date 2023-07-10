@@ -62,14 +62,16 @@ export type ConsentManagerAPI = Readonly<{
   EventTarget;
 
 /**
- * `transcend` event type
+ * `transcend` event types
  */
 export type TranscendEventType = 'view-state-change';
 
-/** 'consent-change' custom event details */
+/** 'view-state-change' custom event details */
 export type ViewStateEventDetails = {
-  /** The new view state */
+  /** The new, now-current view state */
   viewState: ViewState;
+  /** The previous view state */
+  previousViewState: ViewState | null;
 };
 
 /** Transcend Smart Quarantine API (window.transcend) */
