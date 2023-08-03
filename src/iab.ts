@@ -95,7 +95,6 @@ export const TcfV2VendorList = t.intersection([
  */
 export type TcfV2VendorList = t.TypeOf<typeof TcfV2VendorList>;
 
-
 /**
  * TCF GVL v3 purpose configuration
  */
@@ -110,7 +109,6 @@ export const TcfGvlV3Purpose = t.type({
  * Type override
  */
 export type TcfGvlV3Purpose = t.TypeOf<typeof TcfGvlV3Purpose>;
-
 
 /**
  * TCF GVL v3 data categories configuration
