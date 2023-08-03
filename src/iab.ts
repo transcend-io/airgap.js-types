@@ -118,7 +118,7 @@ export const TcfGvlV3DataCategory = t.type({
   name: t.string,
   description: t.string,
 });
- 
+
 /**
  * Type override
  */
