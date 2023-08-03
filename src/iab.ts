@@ -119,13 +119,13 @@ export const TcfGvlV3DataCategory = t.type({
   id: t.number,
   name: t.string,
   description: t.string,
- });
+});
  
 /**
  * Type override
  */
 export type TcfGvlV3DataCategory = t.TypeOf<typeof TcfGvlV3DataCategory>;
- 
+
 /**
  * TCF GVL v3 stack configuration
  */
