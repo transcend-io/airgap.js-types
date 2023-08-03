@@ -97,13 +97,13 @@ export type TcfV2VendorList = t.TypeOf<typeof TcfV2VendorList>;
 
 
 /**
-* TCF GVL v3 purpose configuration
-*/
+ * TCF GVL v3 purpose configuration
+ */
 export const TcfGvlV3Purpose = t.type({
- id: t.number,
- name: t.string,
- description: t.string,
- illustrations: t.array(t.string),
+  id: t.number,
+  name: t.string,
+  description: t.string,
+  illustrations: t.array(t.string),
 });
 
 /**
@@ -113,18 +113,18 @@ export type TcfGvlV3Purpose = t.TypeOf<typeof TcfGvlV3Purpose>;
 
 
 /**
-* TCF GVL v3 data categories configuration
-*/
+ * TCF GVL v3 data categories configuration
+ */
 export const TcfGvlV3DataCategory = t.type({
   id: t.number,
   name: t.string,
   description: t.string,
  });
  
- /**
-  * Type override
-  */
- export type TcfGvlV3DataCategory = t.TypeOf<typeof TcfGvlV3DataCategory>;
+/**
+ * Type override
+ */
+export type TcfGvlV3DataCategory = t.TypeOf<typeof TcfGvlV3DataCategory>;
  
 /**
  * TCF GVL v3 stack configuration
@@ -148,7 +148,9 @@ export const TcfGvlV3Vendor = t.intersection([
       purposes: t.record(t.string, t.number),
       specialPurposes: t.record(t.string, t.number),
     }),
-    urls: t.array(t.type({langId: t.string, privacy: t.string, legIntClaim: t.string})),
+    urls: t.array(
+      t.type({ langId: t.string, privacy: t.string, legIntClaim: t.string }),
+    ),
     dataDeclaration: t.array(t.number),
     deviceStorageDisclosureUrl: t.string,
   }),
@@ -182,6 +184,6 @@ export const TcfV3VendorList = t.intersection([
 ]);
 
 /**
-* Type override
-*/
+ * Type override
+ */
 export type TcfV3VendorList = t.TypeOf<typeof TcfV3VendorList>;
