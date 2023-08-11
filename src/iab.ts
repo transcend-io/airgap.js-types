@@ -151,7 +151,12 @@ export const TcfGvlV3Vendor = t.intersection([
       }),
     ]),
     urls: t.array(
-      t.type({ langId: t.string, privacy: t.string, legIntClaim: t.string }),
+      t.intersection([
+        t.type({ langId: t.string, privacy: t.string }),
+        t.partial({
+          legIntClaim: t.string,
+        }),
+      ]),
     ),
     dataDeclaration: t.array(t.number),
     deviceStorageDisclosureUrl: t.string,
