@@ -141,11 +141,15 @@ export const TcfGvlV3Vendor = t.intersection([
     usesCookies: t.boolean,
     cookieRefresh: t.boolean,
     usesNonCookieAccess: t.boolean,
-    dataRetention: t.type({
-      stdRetention: t.number,
-      purposes: t.record(t.string, t.number),
-      specialPurposes: t.record(t.string, t.number),
-    }),
+    dataRetention: t.intersection([
+      t.type({
+        purposes: t.record(t.string, t.number),
+        specialPurposes: t.record(t.string, t.number),
+      }),
+      t.partial({
+        stdRetention: t.number,
+      }),
+    ]),
     urls: t.array(
       t.type({ langId: t.string, privacy: t.string, legIntClaim: t.string }),
     ),
