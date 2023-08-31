@@ -92,8 +92,8 @@ export type DismissedViewState =
  * Consent Manager view state for the Interactive Advertising Bureau
  */
 export const IABViewState = makeEnum({
-  /* Transparency and Consent Framework for Europe and Canada */
-  TCF: 'TCF',
+  /* Transparency and Consent Framework for Europe */
+  TCF_EU: 'tcfeuv2',
 });
 
 /**
