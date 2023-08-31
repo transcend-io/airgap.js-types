@@ -91,7 +91,7 @@ export type DismissedViewState =
 /**
  * Consent Manager view state for the Interactive Advertising Bureau (IAB) Tech Lab's Global Privacy Platform (GPP)
  */
-export const GPPViewState = makeEnum({
+export const IABViewState = makeEnum({
   /* Transparency and Consent Framework for Europe and Canada */
   TCF: 'TCF',
 });
