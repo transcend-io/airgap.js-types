@@ -93,7 +93,7 @@ export type DismissedViewState =
  */
 export const IABViewState = makeEnum({
   /* Transparency and Consent Framework for Europe */
-  TCF_EU: 'tcfeuv2',
+  TCF_EU: 'TCF_EU',
 });
 
 /**
