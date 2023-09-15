@@ -127,19 +127,17 @@ export type TcfGvlV3DataCategory = t.TypeOf<typeof TcfGvlV3DataCategory>;
 /**
  * TCF GVL v3 URL configuration
  */
-export const TcfGvlV3Urls = t.array(
-  t.intersection([
-    t.type({ langId: t.string, privacy: t.string }),
-    t.partial({
-      legIntClaim: t.string,
-    }),
-  ]),
-);
+export const TcfGvlV3Url = t.intersection([
+  t.type({ langId: t.string, privacy: t.string }),
+  t.partial({
+    legIntClaim: t.string,
+  }),
+]);
 
 /**
  * Type override
  */
-export type TcfGvlV3Urls = t.TypeOf<typeof TcfGvlV3Urls>;
+export type TcfGvlV3Url = t.TypeOf<typeof TcfGvlV3Url>;
 
 /**
  * TCF GVL v3 data retention configuration
@@ -177,7 +175,7 @@ export const TcfGvlV3Vendor = t.intersection([
     cookieRefresh: t.boolean,
     usesNonCookieAccess: t.boolean,
     dataRetention: TcfGvlV3DataRetention,
-    urls: TcfGvlV3Urls,
+    urls: t.array(TcfGvlV3Url),
     deviceStorageDisclosureUrl: t.string,
   }),
   t.partial({
