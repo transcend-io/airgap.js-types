@@ -142,7 +142,7 @@ export const TcfGvlV3Urls = t.array(
 export type TcfGvlV3Urls = t.TypeOf<typeof TcfGvlV3Urls>;
 
 /**
- * TCF GVL v3 data configuration
+ * TCF GVL v3 data retention configuration
  */
 export const TcfGvlV3DataRetention = t.intersection([
   t.type({
