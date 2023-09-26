@@ -108,23 +108,51 @@ export type ConsentManagerBreakpoints = t.TypeOf<
   typeof ConsentManagerBreakpoints
 >;
 
+/**
+ * TODO: https://transcend.height.app/T-19149 - remove
+ *
+ * @deprecated
+ */
 export const PrivacyRegimeToInitialViewStateInput = t.partial(
   applyEnum(PrivacyRegimeEnum, () => valuesOf(InitialViewState)),
 );
 
-/** type overload */
+/**
+ * TODO: https://transcend.height.app/T-19149 - remove
+ *
+ * @deprecated
+ */
 export type PrivacyRegimeToInitialViewStateInput = t.TypeOf<
   typeof PrivacyRegimeToInitialViewStateInput
 >;
 
+/**
+ * TODO: https://transcend.height.app/T-19149 - remove
+ *
+ * @deprecated
+ */
 export const PrivacyRegimeToInitialViewState = t.record(
+  valuesOf(PrivacyRegimeEnum),
+  valuesOf(InitialViewState),
+);
+
+/**
+ * TODO: https://transcend.height.app/T-19149 - remove
+ *
+ * @deprecated
+ */
+export type PrivacyRegimeToInitialViewState = t.TypeOf<
+  typeof PrivacyRegimeToInitialViewState
+>;
+
+export const ExperienceToInitialViewState = t.record(
   t.string,
   valuesOf(InitialViewState),
 );
 
 /** type overload */
-export type PrivacyRegimeToInitialViewState = t.TypeOf<
-  typeof PrivacyRegimeToInitialViewState
+export type ExperienceToInitialViewState = t.TypeOf<
+  typeof ExperienceToInitialViewState
 >;
 
 export const RequiredConsentManagerConfig = t.type({
@@ -141,7 +169,7 @@ export const RequiredConsentManagerConfig = t.type({
   /** Path to localizations directory */
   messages: t.string,
   /** What state the consent manager should launch in */
-  initialViewStateByPrivacyRegime: PrivacyRegimeToInitialViewState,
+  initialViewStateByPrivacyRegime: ExperienceToInitialViewState,
   /** What state the consent manager should go to when dismissed */
   dismissedViewState: valuesOf(DismissedViewState),
 });
@@ -207,7 +235,7 @@ export type TranscendView = Window & {
   transcend: TranscendAPI;
 };
 
-export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: PrivacyRegimeToInitialViewState =
+export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: ExperienceToInitialViewState =
   {
     // EU
     GDPR: InitialViewState.QuickOptions,
