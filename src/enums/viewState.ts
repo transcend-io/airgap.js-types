@@ -2,6 +2,14 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
 /**
+ * Consent Manager view state for the Interactive Advertising Bureau
+ */
+export const IABViewState = makeEnum({
+  /* Transparency and Consent Framework for Europe */
+  TCF_EU: 'TCF_EU',
+});
+
+/**
  * Consent Manager view states that can be used at launch
  */
 export const InitialViewState = makeEnum({
@@ -35,6 +43,8 @@ export const InitialViewState = makeEnum({
   CompleteOptionsInverted: 'CompleteOptionsInverted',
   /* hidden */
   Hidden: 'Hidden',
+  /** View States for IAB Frameworks */
+  ...IABViewState,
 });
 
 /**
@@ -89,14 +99,6 @@ export type DismissedViewState =
   typeof DismissedViewState[keyof typeof DismissedViewState];
 
 /**
- * Consent Manager view state for the Interactive Advertising Bureau
- */
-export const IABViewState = makeEnum({
-  /* Transparency and Consent Framework for Europe */
-  TCF_EU: 'TCF_EU',
-});
-
-/**
  * All possible view states of the Consent Manager
  */
 export const ViewState = makeEnum({
@@ -104,7 +106,6 @@ export const ViewState = makeEnum({
   ...ResponseViewState,
   ...DeepViewState,
   ...DismissedViewState,
-  ...IABViewState,
 });
 
 /**
