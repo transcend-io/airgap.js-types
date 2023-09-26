@@ -118,7 +118,7 @@ export type PrivacyRegimeToInitialViewStateInput = t.TypeOf<
 >;
 
 export const PrivacyRegimeToInitialViewState = t.record(
-  valuesOf(PrivacyRegimeEnum),
+  t.string,
   valuesOf(InitialViewState),
 );
 
