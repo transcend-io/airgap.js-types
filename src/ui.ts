@@ -8,6 +8,7 @@ import { ConsentManagerLanguageKey } from '@transcend-io/internationalization';
 // local
 import {
   ViewState,
+  InitialTranscendViewState,
   InitialViewState,
   PrivacyRegimeEnum,
   DismissedViewState,
@@ -114,7 +115,7 @@ export type ConsentManagerBreakpoints = t.TypeOf<
  * @deprecated
  */
 export const PrivacyRegimeToInitialViewStateInput = t.partial(
-  applyEnum(PrivacyRegimeEnum, () => valuesOf(InitialViewState)),
+  applyEnum(PrivacyRegimeEnum, () => valuesOf(InitialTranscendViewState)),
 );
 
 /**
@@ -133,7 +134,7 @@ export type PrivacyRegimeToInitialViewStateInput = t.TypeOf<
  */
 export const PrivacyRegimeToInitialViewState = t.record(
   valuesOf(PrivacyRegimeEnum),
-  valuesOf(InitialViewState),
+  valuesOf(InitialTranscendViewState),
 );
 
 /**

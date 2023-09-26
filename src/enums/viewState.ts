@@ -10,9 +10,9 @@ export const IABViewState = makeEnum({
 });
 
 /**
- * Consent Manager view states that can be used at launch
+ * View States for Transcend's Consent Manager UI
  */
-export const InitialViewState = makeEnum({
+export const InitialTranscendViewState = makeEnum({
   /* expanded and showing quick select options */
   QuickOptions: 'QuickOptions',
   /* three option UI: essential, functional/analytics, advertising */
@@ -43,6 +43,20 @@ export const InitialViewState = makeEnum({
   CompleteOptionsInverted: 'CompleteOptionsInverted',
   /* hidden */
   Hidden: 'Hidden',
+});
+
+/**
+ * Type override
+ */
+export type InitialTranscendViewState =
+  typeof InitialTranscendViewState[keyof typeof InitialTranscendViewState];
+
+/**
+ * Consent Manager view states that can be used at launch
+ */
+export const InitialViewState = makeEnum({
+  /** View States for Transcend's Consent Manager UI */
+  ...InitialTranscendViewState,
   /** View States for IAB Frameworks */
   ...IABViewState,
 });
