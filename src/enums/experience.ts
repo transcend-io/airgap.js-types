@@ -119,6 +119,13 @@ export const RegionsOperator = makeEnum({
 export type RegionsOperator =
   typeof RegionsOperator[keyof typeof RegionsOperator];
 
+/**
+ * Set of IAB signals that we can communicate
+ */
+export enum IABSignal {
+  GppUsp = 'GPP_USP',
+}
+
 export interface ExperienceInput {
   /** The regime determining the default experience */
   name: PrivacyRegime;
@@ -138,6 +145,8 @@ export interface ExperienceInput {
   viewState: InitialViewState;
   /** experience purposes to be added */
   experiencePurposeInputs: ExperiencePurposeInput[];
+  /** set of IAB signals to be communicated in this experience */
+  iabSignals: IABSignal[];
 }
 
 /**
