@@ -178,6 +178,7 @@ export function defaultExperience(regime: PrivacyRegime): ExperienceInput {
           false,
       }),
     ),
+    iabSignals: [],
   };
 }
 
