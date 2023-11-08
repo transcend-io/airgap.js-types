@@ -131,7 +131,7 @@ export type RegimeToPurposeScopes = [PrivacyRegime[], TrackingPurpose[]][];
 /** Reserved metadata, currently used for airgap module data syncing */
 export interface ReservedMetadata {
   /** Top-level key to avoid polluting the metadata key space */
-  tcmp: Record<string, unknown>;
+  tcmp: null | Record<string, unknown>;
 }
 
 /** setConsent() options */
