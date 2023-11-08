@@ -5,11 +5,7 @@ import * as t from 'io-ts';
 import { FixedLengthArray, valuesOf } from '@transcend-io/type-utils';
 
 // local
-import {
-  ConfigurablePurpose,
-  SpecialTrackingPurpose,
-  ViewState,
-} from './enums';
+import { SpecialTrackingPurpose, ViewState } from './enums';
 
 /* eslint-disable max-lines */
 
@@ -320,7 +316,7 @@ export const TrackingPurposeDetails = t.intersection([
   }),
   t.partial({
     /** Tracking type */
-    trackingType: valuesOf(ConfigurablePurpose),
+    trackingType: t.string,
     /** Respected opt-out privacy signals */
     optOutSignals: t.array(UserPrivacySignal),
   }),
@@ -375,10 +371,15 @@ export const TrackingConsent = t.intersection([
  */
 export type TrackingConsent = t.TypeOf<typeof TrackingConsent>;
 
-export const TrackingConsentDetails = t.intersection([
+export const TrackingConsentWithNulls = t.record(
+  t.string,
+  t.union([t.boolean, t.undefined, t.null]),
+);
+/** Type override */
+export type TrackingConsentWithNulls = t.TypeOf<typeof TrackingConsent>;
+
+const CoreTrackingConsentDetails = t.intersection([
   t.type({
-    /** Tracking consent config */
-    purposes: TrackingConsent,
     /**
      * Was tracking consent confirmed by the user?
      * If this is false, the consent was resolved from defaults & is not yet confirmed
@@ -399,28 +400,57 @@ export const TrackingConsentDetails = t.intersection([
   }),
 ]);
 
+/** Type override */
+export type CoreTrackingConsentDetails = t.TypeOf<
+  typeof CoreTrackingConsentDetails
+>;
+
+export const TrackingConsentDetails = t.intersection([
+  CoreTrackingConsentDetails,
+  t.type({
+    /** Tracking consent config */
+    purposes: TrackingConsent,
+  }),
+]);
+
 /** Override types. */
 export type TrackingConsentDetails = t.TypeOf<typeof TrackingConsentDetails>;
 
+export const TrackingConsentOptionalData = t.partial({
+  /** Transparency Consent (TCF) String */
+  tcf: t.string,
+  /** US Privacy (USP) String */
+  usp: t.string,
+  /** Global Privacy Platform (GPP) String */
+  gpp: t.string,
+  /** Consent Manager View State */
+  viewState: valuesOf(ViewState),
+  /** Airgap Version */
+  airgapVersion: t.string,
+});
+
 export const FullTrackingConsentDetails = t.intersection([
   TrackingConsentDetails,
-  t.partial({
-    /** Transparency Consent (TCF) String */
-    tcf: t.string,
-    /** US Privacy (USP) String */
-    usp: t.string,
-    /** Global Privacy Platform (GPP) String */
-    gpp: t.string,
-    /** Consent Manager View State */
-    viewState: valuesOf(ViewState),
-    /** Airgap Version */
-    airgapVersion: t.string,
-  }),
+  TrackingConsentOptionalData,
 ]);
 
 /** Override types. */
 export type FullTrackingConsentDetails = t.TypeOf<
   typeof FullTrackingConsentDetails
+>;
+
+export const FullTrackingConsentDetailsWithNulls = t.intersection([
+  CoreTrackingConsentDetails,
+  TrackingConsentOptionalData,
+  t.type({
+    /** Tracking consent config */
+    purposes: TrackingConsentWithNulls,
+  }),
+]);
+
+/** Override types. */
+export type FullTrackingConsentDetailsWithNulls = t.TypeOf<
+  typeof FullTrackingConsentDetailsWithNulls
 >;
 
 export const ConsentPreferencesBody = t.type({
