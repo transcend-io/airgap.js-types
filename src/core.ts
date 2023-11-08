@@ -128,6 +128,12 @@ export interface GetPurposeTypesOptions {
  */
 export type RegimeToPurposeScopes = [PrivacyRegime[], TrackingPurpose[]][];
 
+/** Reserved metadata, currently used for airgap module data syncing */
+export interface ReservedMetadata {
+  /** Top-level key to avoid polluting the metadata key space */
+  tcmp: Record<string, unknown>;
+}
+
 /** setConsent() options */
 export interface ConsentOptions {
   /** Was consent confirmed by the user? */
@@ -141,7 +147,7 @@ export interface ConsentOptions {
    * - `null` - Do not change metadata
    * - `false` - Clear metadata
    */
-  metadata?: Record<string, unknown> | null | false;
+  metadata?: (Record<string, unknown> & ReservedMetadata) | null | false;
   /** Last updated for metadata */
   metadataTimestamp?: string;
   /** Whether or not to return a Promise so that the caller can wait for sync to complete. By default, we do not wait for sync */
