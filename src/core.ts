@@ -208,22 +208,38 @@ export type AirgapAPI = Readonly<{
   getPrivacySignals(): Set<UserPrivacySignal>;
   /** airgap.js version number */
   version: string;
+  /** override the event listener signature for consent change events */
+  addEventListener: (
+    type: AirgapConsentEventType,
+    callback: ((evt: ConsentChangeEventDetails) => void) | null,
+    options?: boolean | AddEventListenerOptions | undefined,
+  ) => void;
 }> &
   EventTarget;
 
 /**
+ * Airgap event types that send the ConsentChangeEventDetails object with them
+ */
+export type AirgapConsentEventType =
+  | 'consent-change'
+  | 'sync'
+  | 'consent-resolution';
+
+/**
  * airgap.js event type
  */
-export type AirgapEventType = 'consent-change' | 'purpose-map-load';
+export type AirgapEventType = AirgapConsentEventType | 'purpose-map-load';
 
 /** 'consent-change' custom event details */
 export type ConsentChangeEventDetails = {
   /** The old tracking consent */
-  oldConsent: TrackingConsentDetails;
+  oldConsent: TrackingConsentDetails | null;
   /** The new tracking consent */
-  consent: TrackingConsentDetails;
+  consent: TrackingConsentDetails | null;
   /** The tracking consent diff (what's changed in the new consent) */
-  changes: ConsentChange | null;
+  changes: Record<string, boolean> | null;
+  /** Applicable privacy signals contributing to this consent change event */
+  signals?: Set<UserPrivacySignal> | null;
 };
 
 /** Removable process (can remove watchers, overrides, and protections) */
