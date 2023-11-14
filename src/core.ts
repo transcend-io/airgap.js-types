@@ -130,6 +130,11 @@ export interface ReservedMetadata {
   tcmp: null | Record<string, unknown>;
 }
 
+/**
+ * Extra metadata to be synced along with consent
+ */
+export type Metadata = Record<string, unknown>;
+
 /** setConsent() options */
 export interface ConsentOptions {
   /** Was consent confirmed by the user? */
@@ -143,7 +148,7 @@ export interface ConsentOptions {
    * - `null` - Do not change metadata
    * - `false` - Clear metadata
    */
-  metadata?: (Record<string, unknown> & ReservedMetadata) | null | false;
+  metadata?: (Metadata & ReservedMetadata) | null | false;
   /** Last updated for metadata */
   metadataTimestamp?: string;
   /** Whether or not to return a Promise so that the caller can wait for sync to complete. By default, we do not wait for sync */
