@@ -2,7 +2,11 @@
 import * as t from 'io-ts';
 
 // main
-import { applyEnum, valuesOf } from '@transcend-io/type-utils';
+import {
+  applyEnum,
+  FixedLengthArray,
+  valuesOf,
+} from '@transcend-io/type-utils';
 import { ConsentManagerLanguageKey } from '@transcend-io/internationalization';
 
 // local
@@ -221,6 +225,13 @@ export const TCFConfig = t.type({
   css: t.string,
   /** Path to localizations directory */
   messages: t.string,
+  /** Mapping of tcf purposes to airgap purposes */
+  purposeMap: t.record(
+    /** The TCF purpose number */
+    t.number,
+    /** List of corresponding airgap purposes */
+    t.array(t.string),
+  ),
 });
 
 /** Type override */
