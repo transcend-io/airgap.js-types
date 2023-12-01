@@ -218,12 +218,12 @@ export const NonTcfVendor = t.intersection([
     /** The vendor name */
     name: t.string,
     /** The transcend purposes associated with each vendor */
-    purposes: t.array(t.string)
+    purposes: t.array(t.string),
   }),
   t.partial({
     /** The vendor description */
-    description: t.string
-  })
+    description: t.string,
+  }),
 ]);
 
 /**
