@@ -14,6 +14,7 @@ import {
   DismissedViewState,
 } from './enums';
 import { AirgapAuth } from './core';
+import { NonTcfVendor } from './iab';
 
 /** Transcend Smart Quarantine API (window.transcend) */
 export type PreInitTranscendAPI = {
@@ -232,6 +233,8 @@ const TCFBundledDataConfig = t.partial({
   purposeMap: t.array(t.tuple([t.number, t.array(t.string)])),
   /** These TCF purposes cannot be processed on the basis of legitimate interests */
   restrictLegitimateInterestPurposes: t.array(t.number),
+  /** Vendors that Transcend Consent regulates because they haven't registered with IAB TCF */
+  nonTcfVendors: t.array(NonTcfVendor)
 });
 
 /** Type override */
@@ -252,21 +255,21 @@ export type TranscendView = Window & {
 };
 
 export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: ExperienceToInitialViewState =
-  {
-    // EU
-    GDPR: InitialViewState.QuickOptions,
-    // Brazil
-    LGPD: InitialViewState.QuickOptions,
-    // Switzerland
-    nFADP: InitialViewState.QuickOptions,
-    // US: California
-    CPRA: InitialViewState.Hidden,
-    // US: Virginia
-    CDPA: InitialViewState.Hidden,
-    // US: Colorado
-    CPA: InitialViewState.Hidden,
-    // US: Nevada
-    NEVADA_SB220: InitialViewState.Hidden,
-    // Other
-    Unknown: InitialViewState.Hidden,
-  };
+{
+  // EU
+  GDPR: InitialViewState.QuickOptions,
+  // Brazil
+  LGPD: InitialViewState.QuickOptions,
+  // Switzerland
+  nFADP: InitialViewState.QuickOptions,
+  // US: California
+  CPRA: InitialViewState.Hidden,
+  // US: Virginia
+  CDPA: InitialViewState.Hidden,
+  // US: Colorado
+  CPA: InitialViewState.Hidden,
+  // US: Nevada
+  NEVADA_SB220: InitialViewState.Hidden,
+  // Other
+  Unknown: InitialViewState.Hidden,
+};
