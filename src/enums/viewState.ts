@@ -51,7 +51,7 @@ export const InitialTranscendViewState = makeEnum({
  * Type override
  */
 export type InitialTranscendViewState =
-  (typeof InitialTranscendViewState)[keyof typeof InitialTranscendViewState];
+  typeof InitialTranscendViewState[keyof typeof InitialTranscendViewState];
 
 /**
  * Consent Manager view states that can be used at launch
@@ -67,7 +67,7 @@ export const InitialViewState = makeEnum({
  * Type override
  */
 export type InitialViewState =
-  (typeof InitialViewState)[keyof typeof InitialViewState];
+  typeof InitialViewState[keyof typeof InitialViewState];
 
 /**
  * View states that are displayed in response to a user request (e.g. transcend.doNotSell() or )
@@ -83,7 +83,7 @@ export const ResponseViewState = makeEnum({
  * Type override
  */
 export type ResponseViewState =
-  (typeof ResponseViewState)[keyof typeof ResponseViewState];
+  typeof ResponseViewState[keyof typeof ResponseViewState];
 
 /**
  * Consent Manager view states that can be navigated to after initial view state
@@ -96,7 +96,7 @@ export const DeepViewState = makeEnum({
 /**
  * Type override
  */
-export type DeepViewState = (typeof DeepViewState)[keyof typeof DeepViewState];
+export type DeepViewState = typeof DeepViewState[keyof typeof DeepViewState];
 
 /**
  * Consent Manager view states after it's been dismissed
@@ -112,7 +112,7 @@ export const DismissedViewState = makeEnum({
  * Type override
  */
 export type DismissedViewState =
-  (typeof DismissedViewState)[keyof typeof DismissedViewState];
+  typeof DismissedViewState[keyof typeof DismissedViewState];
 
 /**
  * All possible view states of the Consent Manager
@@ -127,4 +127,4 @@ export const ViewState = makeEnum({
 /**
  * Type override
  */
-export type ViewState = (typeof ViewState)[keyof typeof ViewState];
+export type ViewState = typeof ViewState[keyof typeof ViewState];
