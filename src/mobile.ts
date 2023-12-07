@@ -4,7 +4,7 @@ export const ConsentSDK = t.type({
   /** Unique identifier for the SDK */
   id: t.string,
   /** airgap purposes applicable to this SDK */
-  purposes: t.array(t.string)
+  purposes: t.array(t.string),
 });
 
 /**
@@ -17,7 +17,7 @@ export const ConsentService = t.intersection([
     name: t.string,
   }),
   t.partial({
-    sdks: t.array(ConsentSDK)
+    sdks: t.array(ConsentSDK),
   }),
 ]);
 
@@ -27,7 +27,7 @@ export const ConsentService = t.intersection([
 export type ConsentService = t.TypeOf<typeof ConsentService>;
 
 export const MobileConfig = t.type({
-  services: t.array(ConsentService)
+  services: t.array(ConsentService),
 });
 
 /**
