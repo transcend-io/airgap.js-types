@@ -63,7 +63,7 @@ export type ConsentManagerAPI = Readonly<{
     options?: ShowConsentManagerOptions,
   ): Promise<void>;
   /** Sets local tcf string (does not sync to xdi or preference store) */
-  setTCFConsent?: (tcString: string) => Promise<void>;
+  setTCFConsent?: (auth: AirgapAuth, tcString: string) => Promise<void>;
 }> &
   EventTarget;
 
@@ -251,21 +251,21 @@ export type TranscendView = Window & {
 };
 
 export const DEFAULT_VIEW_STATE_BY_PRIVACY_REGIME: ExperienceToInitialViewState =
-  {
-    // EU
-    GDPR: InitialViewState.QuickOptions,
-    // Brazil
-    LGPD: InitialViewState.QuickOptions,
-    // Switzerland
-    nFADP: InitialViewState.QuickOptions,
-    // US: California
-    CPRA: InitialViewState.Hidden,
-    // US: Virginia
-    CDPA: InitialViewState.Hidden,
-    // US: Colorado
-    CPA: InitialViewState.Hidden,
-    // US: Nevada
-    NEVADA_SB220: InitialViewState.Hidden,
-    // Other
-    Unknown: InitialViewState.Hidden,
-  };
+{
+  // EU
+  GDPR: InitialViewState.QuickOptions,
+  // Brazil
+  LGPD: InitialViewState.QuickOptions,
+  // Switzerland
+  nFADP: InitialViewState.QuickOptions,
+  // US: California
+  CPRA: InitialViewState.Hidden,
+  // US: Virginia
+  CDPA: InitialViewState.Hidden,
+  // US: Colorado
+  CPA: InitialViewState.Hidden,
+  // US: Nevada
+  NEVADA_SB220: InitialViewState.Hidden,
+  // Other
+  Unknown: InitialViewState.Hidden,
+};
