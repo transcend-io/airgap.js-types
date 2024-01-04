@@ -43,7 +43,7 @@ export const InitialTranscendViewState = makeEnum({
    * open a modal that shows a notice that the privacy policy has changed, without any prompt to change consent
    * and no button to close the modal. instead there is an X in the top right corner of the modal
    */
-  PrivacyPolicyNoticeNoButton: 'PrivacyPolicyNoticeWithX',
+  PrivacyPolicyNoticeWithCloseButton: 'PrivacyPolicyNoticeWithCloseButton',
   /** expanded and showing full checkbox options */
   CompleteOptions: 'CompleteOptions',
   /** complete options, but selecting a checkbox means the user is opted out */
