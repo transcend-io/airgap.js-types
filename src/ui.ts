@@ -233,6 +233,8 @@ export const TCFBundledDataConfig = t.partial({
   nonTcfVendors: t.array(NonTcfVendor),
   /** Comma separated list of languages to support in the UI */
   languages: t.string,
+  /** Default locale to use for the UI internationalization  */
+  locale: t.string,
 });
 
 /** Type override */
