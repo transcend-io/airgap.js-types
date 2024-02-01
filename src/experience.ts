@@ -52,7 +52,7 @@ export interface ExperienceInput {
   /** Time in months after which a user's opt-in consent should expire */
   consentExpiry: number;
   /** Behavior to exhibit when the user's consent has expired */
-  onConsentExpiry: OnConsentExpiry; 
+  onConsentExpiry: OnConsentExpiry;
 }
 
 // default to []
@@ -132,9 +132,10 @@ export const REGIME_CONSENT_EXPIRY: Record<PrivacyRegime, number> = {
 };
 
 // default to prompt
-export const REGIME_ON_CONSENT_EXPIRY: Record<PrivacyRegime, OnConsentExpiry> = {
-  GDPR: OnConsentExpiry.ResetOptIns
-}
+export const REGIME_ON_CONSENT_EXPIRY: Record<PrivacyRegime, OnConsentExpiry> =
+  {
+    GDPR: OnConsentExpiry.ResetOptIns,
+  };
 
 /**
  * construct default experience for regime
