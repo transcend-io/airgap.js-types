@@ -26,6 +26,19 @@ repos:
         files: (yaml$|yml$)
   - repo: local
     hooks:
+      - id: prettier
+        name: Prettier
+        language: node
+        entry: yarn
+        args:
+          [
+            run,
+            prettier,
+            --write,
+            --ignore-unknown,
+            --no-error-on-unmatched-pattern,
+          ]
+        types: [file]
       - id: eslint
         name: Eslint
         description: 'Run static code linting'
