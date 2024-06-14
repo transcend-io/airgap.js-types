@@ -101,7 +101,7 @@ export type AirgapAuth =
   /** A `load` event from a just-loaded airgap.js script element (which implies auth by being loaded before airgap.js) */
   | Event
   /** Consent change authorization key automatically conferred by airgap via setAuth() API for UI modules */
-  | Symbol;
+  | symbol;
 
 /** A boolean value represented as either `'on'` or `'off'` */
 export const BooleanString = t.keyof({
