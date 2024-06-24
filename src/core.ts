@@ -90,7 +90,10 @@ export type AirgapAuthMap = {
   interaction?: UIEvent;
   /** Automatically reload the page if needed to remove CSP. `false` by default. */
   autoReload?: boolean;
-  /** Additional authorization key automatically conferred by airgap.js via setAuth() API for UI modules. Required when optional strict authorization mode is enabled. */
+  /**
+   * Additional authorization key automatically conferred by airgap.js via setAuth() API for UI modules.
+   * Required when optional strict authorization mode is enabled.
+   */
   key?: symbol;
 };
 
