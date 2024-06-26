@@ -39,7 +39,7 @@ export type ConsentManagerAPI = Readonly<{
   /** Expose an option to grab the current view state */
   getViewState: () => ViewState;
   /** Set consent change authorization key */
-  setAuth: (auth: AirgapAuth) => void;
+  setAuth?: (auth: AirgapAuthMap['key']) => void;
   /** Change the current privacy policy URL */
   setPrivacyPolicy: (privacyPolicyLink: string) => void;
   /** Change the current secondary policy URL */
