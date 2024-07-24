@@ -981,6 +981,9 @@ export interface IPendingCookieMutation
   toJSON(): PendingCookieMutationJSON;
 }
 
+/** Pending cookie mutation queue */
+export type PendingCookieQueue = IPendingCookieMutation[];
+
 /** Interface for dynamic node references */
 export interface IDynamicNodeReference {
   /**
