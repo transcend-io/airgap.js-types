@@ -385,14 +385,6 @@ export type AirgapQueues = Readonly<{
   setCookies?: PendingCookieMutationDescriptor[];
 }>;
 
-/** Exported airgap.js quarantine queues */
-export type QuarantineJSON = Readonly<{
-  /** Requests */
-  requests?: PendingEventQueue;
-  /** Cookies */
-  cookies?: PendingCookieQueue;
-}>;
-
 /**
  * Airgap event types that send the ConsentChangeEventDetails object with them
  */
