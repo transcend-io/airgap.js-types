@@ -220,6 +220,8 @@ export type CookieWatcher = (event: IPendingCookieMutation) => void;
 
 /** airgap.js API */
 export type AirgapAPI = Readonly<{
+  /** Embedded request watchers */
+  watchers?: AirgapWatcher[];
   /** Embedded request overrides (must specify pre-init) */
   overrides?: RequestOverride[];
   /** Embedded request overrides (must specify pre-init) */
