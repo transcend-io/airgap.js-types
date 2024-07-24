@@ -786,7 +786,10 @@ export interface InstantiatedPendingRequestProps {
 
   /** The following IPendingEvent APIs are only available to overrides: */
 
-  /** All associated resolved request URLs. null = invalid URL */
+  /**
+   * All associated resolved request URLs. null = invalid URL or data: URL (parsing
+   * skipped to optimize performance)
+   */
   URLs: (URL | null)[];
   /** Prevent credentials from being included in request */
   omitCredentials(): boolean;
@@ -976,6 +979,26 @@ export interface IPendingCookieMutation
   extends PendingCookieMutationDescriptor {
   /** Convert PendingCookieMutation to JSON-safe representation */
   toJSON(): PendingCookieMutationJSON;
+}
+
+/** Interface for dynamic node references */
+export interface IDynamicNodeReference {
+  /**
+   * Current node getter. This should always be used in `handleLiveMutation()`.
+   * @returns current node
+   */
+  getNode(): Element;
+  /**
+   * Live node getter. Use this to apply mutations in `quarantine()`
+   * and `quarantineMutation()` handlers.
+   *
+   * `release()` must always be called after completing
+   * mutations using `getLiveNode()`.
+   * @returns live node
+   */
+  getLiveNode(): Element;
+  /** Release & garbage-collect internal node reference */
+  release(): void;
 }
 
 /* eslint-enable max-lines */
