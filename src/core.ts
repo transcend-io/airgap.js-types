@@ -205,6 +205,19 @@ export interface RequestOverride {
   description?: string;
 }
 
+/** Airgap watcher */
+export type AirgapWatcher = (request: IPendingEvent) => void;
+
+/**
+ * Cookie override handler. This function can modify attempted cookie mutations.
+ */
+export type CookieOverride = (event: IPendingCookieMutation) => void;
+
+/**
+ * Passive cookie watcher. This function can view attempted cookie mutations in a read-only state.
+ */
+export type CookieWatcher = (event: IPendingCookieMutation) => void;
+
 /** airgap.js API */
 export type AirgapAPI = Readonly<{
   /** Embedded request overrides (must specify pre-init) */
@@ -219,7 +232,6 @@ export type AirgapAPI = Readonly<{
   sync(): Promise<void>;
   /**
    * Resolve URL input reserialization post-regulation.
-   *
    * @param resolveOverrides - Resolve overrides. Defaults to true.
    */
   resolve(url: Stringifiable, resolveOverrides?: boolean): Stringifiable;
@@ -264,9 +276,7 @@ export type AirgapAPI = Readonly<{
   /** Listen to pending requests passively */
   watch(watcher: AirgapWatcher): Removable;
   /** Listen to cookies passively */
-  watchCookies(
-    watcher: (event: Readonly<IPendingCookieMutation>) => void,
-  ): Removable;
+  watchCookies(watcher: CookieWatcher): Removable;
   /** Clear airgap queue & caches. Returns `true` on success. */
   clear(auth: AirgapAuth): boolean;
   /** Reset airgap queue and consent. Returns `true` on success. */
