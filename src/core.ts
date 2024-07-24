@@ -430,9 +430,11 @@ export type Removable = {
 };
 
 /** Any value which implements `toString()` */
-export type Stringifiable = string | (string & {
-  toString(): string;
-});
+export type Stringifiable =
+  | string
+  | (string & {
+      toString(): string;
+    });
 
 /** Special `defaultConsent` automatic opt-out value for any potential reason */
 export const AutoOptOut = t.literal('Auto');
