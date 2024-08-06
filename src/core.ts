@@ -244,7 +244,6 @@ export type AirgapAPI = Readonly<{
    * Resolve consent status for given tracking purposes. Essential purposes override opted out unessential purposes.
    *
    * If `use` is not provided, consent is resolved for both request and cookie tracking event types.
-   *
    * @param trackingPurposes - Tracking purposes to resolve
    * @param use - Optional event type to use for tracking purpose resolution
    * @returns `true` if the applicable tracking purposes are consented.
