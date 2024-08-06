@@ -248,7 +248,10 @@ export type AirgapAPI = Readonly<{
    * @param use - Optional event type to use for tracking purpose resolution
    * @returns `true` if the applicable tracking purposes are consented.
    */
-  isConsented(trackingPurposes: TrackingPurposes, use?: TrackingEventType): boolean;
+  isConsented(
+    trackingPurposes: TrackingPurposes,
+    use?: TrackingEventType,
+  ): boolean;
   /** Get tracking consent */
   getConsent(): TrackingConsentDetails;
   /** Set tracking consent */
