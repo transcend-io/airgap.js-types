@@ -3,7 +3,10 @@ import * as t from 'io-ts';
 
 // main
 import { ObjByString, applyEnum, valuesOf } from '@transcend-io/type-utils';
-import { ConsentManagerLanguageKey, LanguageKey } from '@transcend-io/internationalization';
+import {
+  ConsentManagerLanguageKey,
+  LanguageKey,
+} from '@transcend-io/internationalization';
 
 // local
 import {
@@ -52,7 +55,7 @@ export type GetTranscendPolicies = {
    * @see https://app.transcend.io/privacy-center/policies
    */
   policyTitles?: string[];
-}
+};
 
 /**
  * The returning Transcend policy
@@ -64,7 +67,7 @@ export type TranscendPolicy = {
   title: string;
   /** The policy content */
   content: string;
-}
+};
 
 /**
  * Transcend Consent Manager external methods
