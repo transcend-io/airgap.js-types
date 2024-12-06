@@ -241,11 +241,12 @@ export const OptionalConsentManagerConfig = t.partial({
    * Potential values: 'closed' (default) and 'open'
    */
   uiShadowRoot: t.string,
-  /** 
-   * The override value for whether to focus on the first descendant of the root arg w/data-initialFocus attribute 
-   * Potential values: 'on' (default) and 'off'
-   * */
-  autofocus: t.string,
+  /**
+   * The override value for whether to focus on the first descendant of the root arg w/data-initialFocus attribute
+   * Potential values: `'on'` (default) or `'off'`
+   *
+   */
+  autofocus: BooleanString,
 });
 
 /** type overload */
