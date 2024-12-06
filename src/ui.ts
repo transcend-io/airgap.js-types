@@ -16,7 +16,7 @@ import {
   PrivacyRegimeEnum,
   DismissedViewState,
 } from './enums';
-import { AirgapAuth, AirgapAuthMap } from './core';
+import { AirgapAuth, AirgapAuthMap, BooleanString } from './core';
 import { NonTcfVendor } from './iab';
 
 /** Transcend Smart Quarantine API (window.transcend) */
