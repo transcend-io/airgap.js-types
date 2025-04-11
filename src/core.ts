@@ -949,13 +949,15 @@ export interface InstantiatedPendingCookieMutationProps {
   expires?: number;
   /** Cookie change event timestamp (Date.now() format) */
   timestamp: string;
-  /** Whether or not cookie is currently allowed */
-  allowed: boolean;
+  /** Whether or not cookie is currently allowed. null = passthrough */
+  allowed?: boolean | null;
+  /** Whether or not cookie is currently disallowed & blocked from entering the quarantine */
+  blocked?: boolean;
   /** Bypass our consent logic and force-allow cookie */
   allow(): void;
   /** Bypass our consent logic and force-deny cookie */
   deny(): void;
-  /** Bypass our consent logic to force-deny cookie and also block it from entering the replay quarantine */
+  /** Bypass our consent logic to force-deny cookie and also block it from entering the quarantine */
   block(): void;
   /** Resolved tracking purposes associated with this pending mutation */
   purposes: Set<TrackingPurpose>;
