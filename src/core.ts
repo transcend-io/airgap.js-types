@@ -812,6 +812,8 @@ export interface InstantiatedPendingRequestProps {
   allow(): void;
   /** Bypass our consent logic and force-deny request */
   deny(): void;
+  /** Bypass our consent logic to force-deny request and also block it from entering the replay quarantine */
+  block(): void;
   /** Resolved tracking purposes associated with this pending mutation */
   purposes: Set<TrackingPurpose>;
 }
@@ -846,7 +848,8 @@ type PendingEventUnserializableProps =
   | 'allow'
   | 'deny'
   | 'purposes'
-  | 'allowed';
+  | 'allowed'
+  | 'blocked';
 
 /** JSON-safe representation of pending event tracking purposes */
 interface PendingEventPurposesJSON {
@@ -952,6 +955,8 @@ export interface InstantiatedPendingCookieMutationProps {
   allow(): void;
   /** Bypass our consent logic and force-deny cookie */
   deny(): void;
+  /** Bypass our consent logic to force-deny cookie and also block it from entering the replay quarantine */
+  block(): void;
   /** Resolved tracking purposes associated with this pending mutation */
   purposes: Set<TrackingPurpose>;
   /** Mutator to apply cookie mutation */
@@ -972,7 +977,8 @@ type PendingCookieMutationUnserializableProps =
   | 'allow'
   | 'deny'
   | 'purposes'
-  | 'allowed';
+  | 'allowed'
+  | 'blocked';
 
 /** JSON-safe representation of pending cookie mutation tracking purposes */
 interface PendingCookieMutationPurposesJSON {
