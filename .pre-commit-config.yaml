@@ -31,5 +31,5 @@ repos:
         description: 'Run static code linting'
         entry: yarn lint --fix
         language: node
-        files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
+        files: .*\.(js|jsx|ts|tsx)$
         types: [file]
