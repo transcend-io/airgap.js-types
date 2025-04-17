@@ -32,4 +32,5 @@ repos:
         entry: yarn lint --fix
         language: node
         files: .*\.(js|jsx|ts|tsx)$
+        exclude: \.cjs$
         types: [file]
