@@ -103,12 +103,12 @@ export type ConsentManagerAPI = Readonly<{
   hideConsentManager(): Promise<void>;
   /** Opt out of the sale of personal info & show a disclosure */
   doNotSell(
-    auth: AirgapAuth,
+    airgapAuthInteractionEvent: AirgapAuthMap['interaction'],
     options?: ShowConsentManagerOptions,
   ): Promise<void>;
   /** Opt out of all purposes */
   optOutNotice(
-    auth: AirgapAuth,
+    airgapAuthInteractionEvent: AirgapAuthMap['interaction'],
     options?: ShowConsentManagerOptions,
   ): Promise<void>;
   /** Sets local tcf string (does not sync to xdi or preference store) */
