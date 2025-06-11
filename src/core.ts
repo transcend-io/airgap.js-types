@@ -938,6 +938,8 @@ export interface Cookie {
  * PendingCookieMutation constructor input
  */
 export interface PendingCookieMutationInit extends Cookie {
+  /** Did the cookie exist before regulation was initialized? */
+  isPreExisting?: boolean;
   /** Persist cookie for cross-session replay if quarantined (true by default) */
   persist?: boolean;
   /** Mutator to apply cookie mutation */
