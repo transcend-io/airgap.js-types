@@ -4,7 +4,7 @@ import * as t from 'io-ts';
 // main
 import { ObjByString, applyEnum, valuesOf } from '@transcend-io/type-utils';
 import {
-  ConsentManagedSupportedTranslationValue,
+  ConsentManagerSupportedTranslationValue,
   LocaleValue,
 } from '@transcend-io/internationalization';
 
@@ -94,9 +94,9 @@ export type ConsentManagerAPI = Readonly<{
   /** Show consent manager */
   showConsentManager(options?: ShowConsentManagerOptions): Promise<void>;
   /** Set the current active language */
-  setActiveLocale(locale: ConsentManagedSupportedTranslationValue): Promise<void>;
+  setActiveLocale(locale: ConsentManagerSupportedTranslationValue): Promise<void>;
   /** Get the currently active locale */
-  getActiveLocale: () => ConsentManagedSupportedTranslationValue;
+  getActiveLocale: () => ConsentManagerSupportedTranslationValue;
   /** Toggle consent manager */
   toggleConsentManager(options?: ShowConsentManagerOptions): Promise<void>;
   /** Hide consent manager */
@@ -231,7 +231,7 @@ export type RequiredConsentManagerConfig = t.TypeOf<
 >;
 
 export const OptionalConsentManagerConfig = t.partial({
-  /** The set of enabled languages - CSV of ConsentManagedSupportedTranslationValue */
+  /** The set of enabled languages - CSV of ConsentManagerSupportedTranslationValue */
   languages: t.string,
   /** The override value for the consent banner z-index */
   uiZIndex: t.string,
