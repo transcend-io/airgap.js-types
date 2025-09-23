@@ -145,7 +145,10 @@ export type Metadata = Record<string, unknown>;
 export interface ConsentOptions {
   /** Was consent confirmed by the user? */
   confirmed?: boolean;
-  /** Was the UI shown to the user? */
+  /**
+   * Was the UI shown to the user?
+   * @deprecated
+   */
   prompted?: boolean;
   /**
    * Extra metadata to be synced along with consent
@@ -264,7 +267,10 @@ export type AirgapAPI = Readonly<{
     /** Consent options */
     options?: ConsentOptions,
   ): Promise<boolean> | boolean;
-  /** Sets whether or not the Consent UI has been shown to the user */
+  /**
+   * Sets whether or not the Consent UI has been shown to the user
+   * @deprecated
+   */
   setPrompted(state: boolean): Promise<void>;
   /** Consents the user to all tracking purposes (requires recent UI interaction) */
   optIn(
@@ -608,7 +614,10 @@ export const CoreTrackingConsentDetails = t.intersection([
   t.partial({
     /** Has the consent been updated (including no-change confirmation) since default resolution */
     updated: t.boolean,
-    /** Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js) */
+    /**
+     * Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js)
+     * @deprecated
+     */
     prompted: t.boolean,
     /** Arbitrary metadata that customers want to be associated with consent state */
     metadata: t.intersection([ReservedMetadata, t.UnknownRecord]),
