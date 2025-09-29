@@ -151,7 +151,7 @@ export interface ConsentOptions {
   confirmed?: boolean | 0;
   /**
    * Was the UI shown to the user?
-   * @deprecated
+   * @deprecated Deprecated because it was discovered to have not been being set reliably, and was not being used by our UI.
    */
   prompted?: boolean;
   /**
@@ -273,7 +273,7 @@ export type AirgapAPI = Readonly<{
   ): Promise<boolean> | boolean;
   /**
    * Sets whether or not the Consent UI has been shown to the user
-   * @deprecated
+   * @deprecated Deprecated because it was discovered to have not been working reliably, and the value it was attempting to set was not being used by our UI.
    */
   setPrompted(state: boolean): Promise<void>;
   /** Consents the user to all tracking purposes (requires recent UI interaction) */
@@ -621,7 +621,7 @@ export const CoreTrackingConsentDetails = t.intersection([
     updated: t.boolean,
     /**
      * Whether or not the UI has been shown to the end-user (undefined in older versions of airgap.js)
-     * @deprecated
+     * @deprecated Deprecated because it was discovered to have not been being set reliably, and was not being used by our UI.
      */
     prompted: t.boolean,
     /** Arbitrary metadata that customers want to be associated with consent state */
