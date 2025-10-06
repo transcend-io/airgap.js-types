@@ -22,9 +22,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '20.x'
-      - run: |
-          yarn config set npmAlwaysAuth true
-          yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: |
           PACKAGE_NAME=$(node -p "require('./package.json').name")
           yarn exec npm deprecate "${PACKAGE_NAME}@${{ inputs.version }}" "${{ inputs.message }}"
