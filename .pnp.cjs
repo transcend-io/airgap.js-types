@@ -29,7 +29,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@transcend-io/internationalization", "npm:2.0.0"],\
           ["@transcend-io/privacy-types", "npm:4.138.0"],\
-          ["@transcend-io/type-utils", "npm:1.2.0"],\
+          ["@transcend-io/type-utils", "npm:1.8.4"],\
           ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
           ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
           ["@yarnpkg/pnpify", "npm:4.1.3"],\
@@ -443,7 +443,7 @@ const RAW_RUNTIME_STATE =
           ["@transcend-io/airgap.js-types", "workspace:."],\
           ["@transcend-io/internationalization", "npm:2.0.0"],\
           ["@transcend-io/privacy-types", "npm:4.138.0"],\
-          ["@transcend-io/type-utils", "npm:1.2.0"],\
+          ["@transcend-io/type-utils", "npm:1.8.4"],\
           ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
           ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
           ["@yarnpkg/pnpify", "npm:4.1.3"],\
@@ -487,15 +487,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@transcend-io/type-utils", [\
-      ["npm:1.2.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@transcend-io-type-utils-npm-1.2.0-5854e0cd60-10c0.zip/node_modules/@transcend-io/type-utils/",\
-        "packageDependencies": [\
-          ["@transcend-io/type-utils", "npm:1.2.0"],\
-          ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:1.8.4", {\
         "packageLocation": "../../.yarn/berry/cache/@transcend-io-type-utils-npm-1.8.4-cf70873fba-10c0.zip/node_modules/@transcend-io/type-utils/",\
         "packageDependencies": [\
