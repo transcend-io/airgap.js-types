@@ -418,15 +418,15 @@ export type AirgapConsentEventType =
 /**
  * airgap.js event type
  */
-export type AirgapEventType = AirgapConsentEventType | 'purpose-map-load';
+export type AirgapEventType = AirgapConsentEventType | 'policy-update';
 
 export interface ConsentChangeEventPayload {
   /** consent change event details */
   detail: ConsentChangeEventDetails;
 }
 
-/** 'consent-change' custom event details */
-export type ConsentChangeEventDetails = {
+/** Consent change/resolution/sync event details */
+export interface ConsentChangeEventDetails {
   /** The old tracking consent */
   oldConsent: TrackingConsentDetails | null;
   /** The new tracking consent */
@@ -435,7 +435,9 @@ export type ConsentChangeEventDetails = {
   changes: Record<string, boolean> | null;
   /** Applicable privacy signals contributing to this consent change event */
   signals?: Set<UserPrivacySignal> | null;
-};
+  /** Whether this consent change originated from sync (added in airgap.js 9.114.0) */
+  fromSync: boolean;
+}
 
 /** Removable process (can remove watchers, overrides, and protections) */
 export type Removable = {
