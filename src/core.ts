@@ -225,6 +225,34 @@ export type CookieWatcher = (event: IPendingCookieMutation) => void;
 /** Event types (for purpose resolution) */
 export type TrackingEventType = 'request' | 'cookie';
 
+/**
+ * Module type
+ */
+type ModuleKind = 'ui' | 'plugin' | 'policies';
+
+/** JS module descriptor */
+interface ModuleDescriptor {
+  /** Module URL */
+  url: string;
+  /** Module ID (defaults to URI if not provided) */
+  id?: string;
+  /** Module name */
+  name?: string;
+  /** Module kind (default: plugin) */
+  kind?: ModuleKind;
+  /** Module media type (default: application/ecmascript) */
+  type?:
+    | 'module' // ES module
+    | 'application/ecmascript' // default for kind={plugin, ui}
+    | 'application/vnd.transcend.governance-policies+json'; // default for kind=policies
+  /** Should module be loaded synchronously? (default: false) */
+  sync?: boolean;
+}
+
+/** Active JS module descriptor */
+export type ActiveModuleDescriptor = Omit<ModuleDescriptor, 'id'> &
+  Required<Pick<ModuleDescriptor, 'id'>>;
+
 /** airgap.js API */
 export type AirgapAPI = Readonly<{
   /** Embedded request watchers */
@@ -356,6 +384,8 @@ export type AirgapAPI = Readonly<{
   export(options?: AirgapExportOptions): AirgapQueues;
   /** Get a list of legal regimes that are potentially applicable to the user */
   getRegimes(): Set<PrivacyRegime>;
+  /** Get a list of active modules */
+  getModules(): ActiveModuleDescriptor[];
   /** Get a list of detected active user agent privacy signals */
   getPrivacySignals(): Set<UserPrivacySignal>;
   /** Toggle all airgap.js protections. Auth must be a pre-airgap.js or airgap.js script 'load' event. Returns success status */
