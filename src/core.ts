@@ -426,14 +426,6 @@ export type AirgapQueues = Readonly<{
   setCookies?: PendingCookieMutationDescriptor[];
 }>;
 
-/** Exported airgap quarantine queues (localStorage.tcmQuarantine JSON format) */
-export type QuarantineJSON = Readonly<{
-  /** Requests */
-  requests?: PendingRequestJSON[];
-  /** Cookies */
-  cookies?: PendingCookieMutationJSON[];
-}>;
-
 /**
  * Airgap event types that send the ConsentChangeEventDetails object with them
  */
