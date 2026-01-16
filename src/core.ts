@@ -234,8 +234,6 @@ export interface SyncOptions {
   sync?: AirgapSyncType[];
   /** reset synchronized data (default: false) */
   reset?: boolean;
-  /** sync group / partition */
-  partition?: string;
   /** sync locally (i.e. XDI) */
   local?: boolean;
   /** sync with remote endpoint */
