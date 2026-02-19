@@ -242,154 +242,6 @@ export interface SyncOptions {
   auth?: string;
 }
 
-/** airgap.js API */
-export type AirgapAPI = Readonly<{
-  /** Embedded request watchers */
-  watchers?: AirgapWatcher[];
-  /** Embedded request overrides (must specify pre-init) */
-  overrides?: RequestOverride[];
-  /** Embedded request overrides (must specify pre-init) */
-  cookieOverrides?: CookieOverride[];
-  /** Airgap ready event subscriber */
-  ready(callback: (airgap: AirgapAPI) => void): void;
-  /** Queue of callbacks to dispatch once airgap is ready */
-  readyQueue?: ((airgap: AirgapAPI) => void)[];
-  /** Enqueue cross-domain data sync across all airgap bundle domains */
-  sync(options?: SyncOptions): Promise<void>;
-  /**
-   * Resolve URL input reserialization post-regulation.
-   * @param resolveOverrides - Resolve overrides. Defaults to true.
-   */
-  resolve(url: Stringifiable, resolveOverrides?: boolean): Stringifiable;
-  /**
-   * Resolve consent status for given tracking purposes. Essential purposes override opted out unessential purposes.
-   *
-   * If `use` is not provided, consent is resolved for both request and cookie tracking event types.
-   * @param trackingPurposes - Tracking purposes to resolve
-   * @param use - Optional event type to use for tracking purpose resolution
-   * @returns `true` if the applicable tracking purposes are consented.
-   */
-  isConsented(
-    trackingPurposes: TrackingPurposes,
-    use?: TrackingEventType,
-  ): boolean;
-  /** Get tracking consent */
-  getConsent(): TrackingConsentDetails;
-  /** Set tracking consent */
-  setConsent(
-    /** Airgap auth proof */
-    auth: AirgapAuth,
-    /** The tracking consent options. */
-    consent: TrackingConsent,
-    /** Consent options */
-    options?: ConsentOptions,
-  ): Promise<boolean> | boolean;
-  /**
-   * Sets whether or not the Consent UI has been shown to the user
-   * @deprecated It was discovered that this function was not working reliably in some versions, and that the value it set was not being used.
-   */
-  setPrompted(state: boolean): Promise<void>;
-  /** Consents the user to all tracking purposes (requires recent UI interaction) */
-  optIn(
-    /** Airgap auth proof */
-    auth: AirgapAuth,
-  ): boolean;
-  /** Revokes consent for all tracking purposes (requires recent UI interaction) */
-  optOut(
-    /** Airgap auth proof */
-    auth: AirgapAuth,
-  ): boolean;
-  /** Returns true if the user is fully-opted in to all first-order tracking purposes */
-  isOptedIn(): boolean;
-  /** Returns true if the user is fully-opted out to all first-order tracking purposes */
-  isOptedOut(): boolean;
-  /** Resolve regime tracking purposes. If no regimes are provided, then the user's detected regimes are used */
-  getRegimePurposes(regimes?: Set<PrivacyRegime>): Set<TrackingPurpose>;
-  /** Get initialized tracking purposes config */
-  getPurposeTypes(): TrackingPurposesTypes;
-  /** Override pending requests */
-  override(auth: AirgapAuth, ...overrides: RequestOverride[]): Removable;
-  /** Override cookies */
-  overrideCookies(
-    auth: AirgapAuth,
-    handler: (event: IPendingCookieMutation) => void,
-  ): Removable;
-  /** Listen to pending requests passively */
-  watch(watcher: AirgapWatcher): Removable;
-  /** Listen to cookies passively */
-  watchCookies(watcher: CookieWatcher): Removable;
-  /** Clear airgap queue & caches. Returns `true` on success. */
-  clear(auth: AirgapAuth): boolean;
-  /** Reset airgap queue and consent. Returns `true` on success. */
-  reset(
-    /** An airgap auth proof */
-    auth: AirgapAuth,
-    /** Automatically reload the page if needed to remove CSP. */
-    autoReload?: boolean,
-  ): boolean;
-  /** Check whether a URL is allowed to be loaded */
-  isAllowed(
-    /** URL to evaluate */
-    url: Stringifiable,
-    /** Should overrides be resolved? true by default */
-    resolveOverrides?: boolean,
-  ): Promise<boolean>;
-  /** Check whether a cookie is allowed to be set */
-  isCookieAllowed(
-    /** IPendingCookieMutation-like object to evaluate */
-    cookie: string | IPendingCookieMutation | PendingCookieMutationInit,
-    /** Should overrides be resolved? true by default */
-    resolveOverrides?: boolean,
-  ): Promise<boolean>;
-  /** Check whether a IPendingRequest is allowed to be loaded */
-  isRequestAllowed(
-    /** IPendingEvent to inspect */
-    request: IPendingEvent,
-    /** Should overrides be resolved? true by default */
-    resolveOverrides?: boolean,
-  ): Promise<boolean>;
-  /** Get purposes of URL */
-  getPurposes(
-    /** URL to evaluate */
-    url: Stringifiable,
-    /** Should overrides be resolved? true by default */
-    resolveOverrides?: boolean,
-  ): Promise<TrackingPurposes>;
-  /** Get purposes of IPendingRequest */
-  getRequestPurposes(
-    /** IPendingEvent-like object to inspect */
-    request: string | IPendingEvent | PendingRequestInit,
-    /** Should overrides be resolved? true by default */
-    resolveOverrides?: boolean,
-  ): Promise<TrackingPurposes>;
-  /** Get purposes of a cookie */
-  getCookiePurposes(
-    /** IPendingCookieMutation-like object to evaluate */
-    cookie: string | IPendingCookieMutation | PendingCookieMutationInit,
-    /** Should overrides be resolved? true by default */
-    resolveOverrides?: boolean,
-  ): Promise<TrackingPurposes>;
-  /** Export queues */
-  export(options?: AirgapExportOptions): AirgapQueues;
-  /** Get a list of legal regimes that are potentially applicable to the user */
-  getRegimes(): Set<PrivacyRegime>;
-  /** Get a list of detected active user agent privacy signals */
-  getPrivacySignals(): Set<UserPrivacySignal>;
-  /** Toggle all airgap.js protections. Auth must be a pre-airgap.js or airgap.js script 'load' event. Returns success status */
-  toggle(auth: AirgapAuth, options?: AirgapToggleOptions): boolean;
-  /** Current airgap.js system flags */
-  status: AirgapSystemStatus;
-  /** airgap.js version number */
-  version: string;
-  /** override the event listener signature for consent change events */
-  addEventListener: (
-    type: AirgapConsentEventType,
-    callback: ((evt: ConsentChangeEventPayload) => void) | null,
-    options?: boolean | AddEventListenerOptions | undefined,
-  ) => void;
-}> &
-  EventTarget;
-
 /** airgap.export() options */
 export interface AirgapExportOptions {
   /** Send output to web endpoint */
@@ -750,6 +602,266 @@ export type RegimePurposeScopesConfig = [
   /** In-scope purposes */
   purposes: TrackingPurpose[],
 ][];
+
+/** airgap.js settings or load options (minimal shape for metadata) */
+export const AirgapSettings = t.partial({});
+/** Type override */
+export type AirgapSettings = t.TypeOf<typeof AirgapSettings>;
+
+/** Airgap purpose map JSON */
+export const IPurposeMapJSON = t.record(t.string, t.array(t.string));
+/** Type override */
+export type IPurposeMapJSON = t.TypeOf<typeof IPurposeMapJSON>;
+
+/** Region regimes configuration */
+export const RegionRegimesConfig = t.array(
+  FixedLengthArray(2, Infinity, t.array(t.string)),
+);
+/** Type override */
+export type RegionRegimesConfig = t.TypeOf<typeof RegionRegimesConfig>;
+
+/** Macroregion codes to space-separated country codes list */
+export const MacroregionMapInput = t.array(
+  t.tuple([t.string, t.array(t.string)]),
+);
+/** Type override */
+export type MacroregionMapInput = t.TypeOf<typeof MacroregionMapInput>;
+
+/** Cookie metadata (name, purposes, maxAge) */
+export const CookieMetadata = t.type({
+  /** Name of the cookie */
+  name: t.string,
+  /** The tracking purposes of this cookie */
+  trackingPurposes: t.array(t.string),
+  /** Max age of the cookie in milliseconds */
+  maxAge: t.union([t.null, t.number]),
+});
+/** Type override */
+export type CookieMetadata = t.TypeOf<typeof CookieMetadata>;
+
+/** Data flow metadata (value, type, purposes) */
+export const DataFlowMetadata = t.type({
+  /** Value of this data flow */
+  value: t.string,
+  /** Scope of the data flow (which part of the request it applies to) */
+  type: t.string,
+  /** The tracking purposes of this data flow */
+  trackingPurposes: t.array(t.string),
+});
+/** Type override */
+export type DataFlowMetadata = t.TypeOf<typeof DataFlowMetadata>;
+
+/** Service metadata (title, logo, description, cookies, dataFlows, sites) */
+export const AirgapServiceMetadata = t.intersection([
+  t.type({
+    /** Title of this service */
+    title: t.string,
+    /** The URL to the logo of this service */
+    logoSquare: t.union([t.null, t.string]),
+    /** Description for this service */
+    description: t.string,
+    /** Associated cookies */
+    cookies: t.array(CookieMetadata),
+    /** Associated data flows */
+    dataFlows: t.array(DataFlowMetadata),
+    /** The sites that this service is associated with */
+    sites: t.array(t.string),
+  }),
+  t.partial({
+    /** The integration name of the service, if applicable */
+    integrationName: t.string,
+  }),
+]);
+/** Type override */
+export type AirgapServiceMetadata = t.TypeOf<typeof AirgapServiceMetadata>;
+
+/** Metadata about the services and cookies that airgap regulates */
+export const ServicesMetadata = t.type({
+  /** All the services regulated by Airgap */
+  services: t.array(AirgapServiceMetadata),
+});
+/** Type override */
+export type ServicesMetadata = t.TypeOf<typeof ServicesMetadata>;
+
+/** Metadata about the services and cookies that airgap regulates */
+export const AirgapMetadata = t.intersection([
+  ServicesMetadata,
+  t.type({
+    /**
+     * Region to regimes mappings
+     * TODO: https://linear.app/transcend/issue/WAR-3578 - make required once experiences fully rolled out
+     */
+    regionRegimesMap: RegionRegimesConfig,
+    /** Regime purpose scopes */
+    regimePurposeScopes: RegimePurposeScopesConfig,
+    /** Regime purpose opt outs */
+    regimePurposeOptOuts: RegimePurposeScopesConfig,
+    /** Airgap purpose types configuration */
+    purposes: TrackingPurposesConfig,
+    /** Default load options for all bundles */
+    loadOptions: AirgapSettings,
+    /** Airgap domain purpose map */
+    purposeMap: IPurposeMapJSON,
+    /** Bundle CDN URL (based on DEPLOY_ENV) */
+    cdn: t.string,
+    /** Macroregion map */
+    macroregions: MacroregionMapInput,
+  }),
+]);
+/** Type override */
+export type AirgapMetadata = t.TypeOf<typeof AirgapMetadata>;
+
+/** airgap.js API */
+export type AirgapAPI = Readonly<{
+  /** Embedded request watchers */
+  watchers?: AirgapWatcher[];
+  /** Embedded request overrides (must specify pre-init) */
+  overrides?: RequestOverride[];
+  /** Embedded request overrides (must specify pre-init) */
+  cookieOverrides?: CookieOverride[];
+  /** Airgap ready event subscriber */
+  ready(callback: (airgap: AirgapAPI) => void): void;
+  /** Queue of callbacks to dispatch once airgap is ready */
+  readyQueue?: ((airgap: AirgapAPI) => void)[];
+  /** Metadata JSON location */
+  metadata?: string | false;
+  /** Enqueue cross-domain data sync across all airgap bundle domains */
+  sync(options?: SyncOptions): Promise<void>;
+  /**
+   * Resolve URL input reserialization post-regulation.
+   * @param resolveOverrides - Resolve overrides. Defaults to true.
+   */
+  resolve(url: Stringifiable, resolveOverrides?: boolean): Stringifiable;
+  /**
+   * Resolve consent status for given tracking purposes. Essential purposes override opted out unessential purposes.
+   *
+   * If `use` is not provided, consent is resolved for both request and cookie tracking event types.
+   * @param trackingPurposes - Tracking purposes to resolve
+   * @param use - Optional event type to use for tracking purpose resolution
+   * @returns `true` if the applicable tracking purposes are consented.
+   */
+  isConsented(
+    trackingPurposes: TrackingPurposes,
+    use?: TrackingEventType,
+  ): boolean;
+  /** Get tracking consent */
+  getConsent(): TrackingConsentDetails;
+  /** Set tracking consent */
+  setConsent(
+    /** Airgap auth proof */
+    auth: AirgapAuth,
+    /** The tracking consent options. */
+    consent: TrackingConsent,
+    /** Consent options */
+    options?: ConsentOptions,
+  ): Promise<boolean> | boolean;
+  /**
+   * Sets whether or not the Consent UI has been shown to the user
+   * @deprecated It was discovered that this function was not working reliably in some versions, and that the value it set was not being used.
+   */
+  setPrompted(state: boolean): Promise<void>;
+  /** Consents the user to all tracking purposes (requires recent UI interaction) */
+  optIn(
+    /** Airgap auth proof */
+    auth: AirgapAuth,
+  ): boolean;
+  /** Revokes consent for all tracking purposes (requires recent UI interaction) */
+  optOut(
+    /** Airgap auth proof */
+    auth: AirgapAuth,
+  ): boolean;
+  /** Returns true if the user is fully-opted in to all first-order tracking purposes */
+  isOptedIn(): boolean;
+  /** Returns true if the user is fully-opted out to all first-order tracking purposes */
+  isOptedOut(): boolean;
+  /** Resolve regime tracking purposes. If no regimes are provided, then the user's detected regimes are used */
+  getRegimePurposes(regimes?: Set<PrivacyRegime>): Set<TrackingPurpose>;
+  /** Get initialized tracking purposes config */
+  getPurposeTypes(): TrackingPurposesTypes;
+  /** Override pending requests */
+  override(auth: AirgapAuth, ...overrides: RequestOverride[]): Removable;
+  /** Override cookies */
+  overrideCookies(
+    auth: AirgapAuth,
+    handler: (event: IPendingCookieMutation) => void,
+  ): Removable;
+  /** Listen to pending requests passively */
+  watch(watcher: AirgapWatcher): Removable;
+  /** Listen to cookies passively */
+  watchCookies(watcher: CookieWatcher): Removable;
+  /** Clear airgap queue & caches. Returns `true` on success. */
+  clear(auth: AirgapAuth): boolean;
+  /** Reset airgap queue and consent. Returns `true` on success. */
+  reset(
+    /** An airgap auth proof */
+    auth: AirgapAuth,
+    /** Automatically reload the page if needed to remove CSP. */
+    autoReload?: boolean,
+  ): boolean;
+  /** Check whether a URL is allowed to be loaded */
+  isAllowed(
+    /** URL to evaluate */
+    url: Stringifiable,
+    /** Should overrides be resolved? true by default */
+    resolveOverrides?: boolean,
+  ): Promise<boolean>;
+  /** Check whether a cookie is allowed to be set */
+  isCookieAllowed(
+    /** IPendingCookieMutation-like object to evaluate */
+    cookie: string | IPendingCookieMutation | PendingCookieMutationInit,
+    /** Should overrides be resolved? true by default */
+    resolveOverrides?: boolean,
+  ): Promise<boolean>;
+  /** Check whether a IPendingRequest is allowed to be loaded */
+  isRequestAllowed(
+    /** IPendingEvent to inspect */
+    request: IPendingEvent,
+    /** Should overrides be resolved? true by default */
+    resolveOverrides?: boolean,
+  ): Promise<boolean>;
+  /** Get purposes of URL */
+  getPurposes(
+    /** URL to evaluate */
+    url: Stringifiable,
+    /** Should overrides be resolved? true by default */
+    resolveOverrides?: boolean,
+  ): Promise<TrackingPurposes>;
+  /** Get purposes of IPendingRequest */
+  getRequestPurposes(
+    /** IPendingEvent-like object to inspect */
+    request: string | IPendingEvent | PendingRequestInit,
+    /** Should overrides be resolved? true by default */
+    resolveOverrides?: boolean,
+  ): Promise<TrackingPurposes>;
+  /** Get purposes of a cookie */
+  getCookiePurposes(
+    /** IPendingCookieMutation-like object to evaluate */
+    cookie: string | IPendingCookieMutation | PendingCookieMutationInit,
+    /** Should overrides be resolved? true by default */
+    resolveOverrides?: boolean,
+  ): Promise<TrackingPurposes>;
+  /** Fetches JSON metadata about services and cookies regulated by airgap */
+  getMetadata(): Promise<AirgapMetadata>;
+  /** Export queues */
+  export(options?: AirgapExportOptions): AirgapQueues;
+  /** Get a list of legal regimes that are potentially applicable to the user */
+  getRegimes(): Set<PrivacyRegime>;
+  /** Get a list of detected active user agent privacy signals */
+  getPrivacySignals(): Set<UserPrivacySignal>;
+  /** Toggle all airgap.js protections. Auth must be a pre-airgap.js or airgap.js script 'load' event. Returns success status */
+  toggle(auth: AirgapAuth, options?: AirgapToggleOptions): boolean;
+  /** Current airgap.js system flags */
+  status: AirgapSystemStatus;
+  /** airgap.js version number */
+  version: string;
+  /** override the event listener signature for consent change events */
+  addEventListener: (
+    type: AirgapConsentEventType,
+    callback: ((evt: ConsentChangeEventPayload) => void) | null,
+    options?: boolean | AddEventListenerOptions | undefined,
+  ) => void;
+}> &
+  EventTarget;
 
 /** Request source types */
 export type AirgapRequestSource =
