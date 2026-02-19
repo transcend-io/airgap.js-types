@@ -634,7 +634,7 @@ export const CookieMetadata = t.type({
   /** The tracking purposes of this cookie */
   trackingPurposes: t.array(t.string),
   /** Max age of the cookie in milliseconds */
-  maxAge: t.union([t.null, t.number]),
+  maxAge: t.union([t.null, t.number, t.string]),
 });
 /** Type override */
 export type CookieMetadata = t.TypeOf<typeof CookieMetadata>;
