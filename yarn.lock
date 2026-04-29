@@ -315,7 +315,7 @@ __metadata:
   dependencies:
     "@transcend-io/internationalization": "npm:^2.3.0"
     "@transcend-io/privacy-types": "npm:^4.143.0"
-    "@transcend-io/type-utils": "npm:^1.8.5"
+    "@transcend-io/type-utils": "npm:^3.0.1"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.2"
     "@typescript-eslint/parser": "npm:^6.13.2"
     depcheck: "npm:^1.4.7"
@@ -362,13 +362,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@transcend-io/type-utils@npm:^1.8.5":
-  version: 1.8.5
-  resolution: "@transcend-io/type-utils@npm:1.8.5"
+"@transcend-io/type-utils@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@transcend-io/type-utils@npm:3.0.1"
   dependencies:
     fp-ts: "npm:^2.16.1"
     io-ts: "npm:^2.2.21"
-  checksum: 10c0/5839f9d3026875cfaf70bf9ac7205052cd48e359f8732db0de21d4b4294dee189fd1536aa0afa7bbe9ab80cf3579c1bd0aa637db9ff04d96dc54f20f5633831e
+  checksum: 10c0/9953673fa48cea25e6c948ee258f1445631c6d9c147801f34d41338fcc63eb586d5eccf68c834c76d6c102ded19a70bfe3cce9564bf787cea0fcb9de57f6e318
   languageName: node
   linkType: hard
 
