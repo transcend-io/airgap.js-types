@@ -25,13 +25,13 @@
     "test": "echo 'no tests'"
   },
   "dependencies": {
+    "@transcend-io/internationalization": "^2.3.0",
+    "@transcend-io/privacy-types": "^4.143.0",
     "@transcend-io/type-utils": "^3.0.1",
     "fp-ts": "^2.16.1",
     "io-ts": "^2.2.21"
   },
   "devDependencies": {
-    "@transcend-io/internationalization": "^2.3.0",
-    "@transcend-io/privacy-types": "^4.143.0",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "depcheck": "^1.4.7",
