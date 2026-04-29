@@ -30,7 +30,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@transcend-io/airgap.js-types", "workspace:."],\
           ["@transcend-io/internationalization", "npm:4.0.1"],\
-          ["@transcend-io/privacy-types", "npm:4.143.0"],\
+          ["@transcend-io/privacy-types", "npm:5.1.4"],\
           ["@transcend-io/type-utils", "npm:3.0.1"],\
           ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
           ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
@@ -42,7 +42,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-import", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.29.0"],\
           ["eslint-plugin-jsdoc", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:46.9.0"],\
           ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"],\
+          ["io-ts", "virtual:bd55ac14ae36f0e530417cc68af7fa9b5b85022f6ee1f29533025507b0e4672b9d87668d21e1f354aff6320853cef2f3870337833186be282eb5d83b5cdf6fd0#npm:2.2.21"],\
           ["prettier", "npm:3.1.0"],\
           ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"]\
@@ -413,7 +413,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@transcend-io/airgap.js-types", "workspace:."],\
           ["@transcend-io/internationalization", "npm:4.0.1"],\
-          ["@transcend-io/privacy-types", "npm:4.143.0"],\
+          ["@transcend-io/privacy-types", "npm:5.1.4"],\
           ["@transcend-io/type-utils", "npm:3.0.1"],\
           ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
           ["@typescript-eslint/parser", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
@@ -425,7 +425,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-import", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:2.29.0"],\
           ["eslint-plugin-jsdoc", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:46.9.0"],\
           ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"],\
+          ["io-ts", "virtual:bd55ac14ae36f0e530417cc68af7fa9b5b85022f6ee1f29533025507b0e4672b9d87668d21e1f354aff6320853cef2f3870337833186be282eb5d83b5cdf6fd0#npm:2.2.21"],\
           ["prettier", "npm:3.1.0"],\
           ["ts-node", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"]\
@@ -434,13 +434,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@transcend-io/internationalization", [\
-      ["npm:2.3.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@transcend-io-internationalization-npm-2.3.0-ab5d3c458b-10c0.zip/node_modules/@transcend-io/internationalization/",\
-        "packageDependencies": [\
-          ["@transcend-io/internationalization", "npm:2.3.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:4.0.1", {\
         "packageLocation": "../../.yarn/berry/cache/@transcend-io-internationalization-npm-4.0.1-558276da2a-10c0.zip/node_modules/@transcend-io/internationalization/",\
         "packageDependencies": [\
@@ -450,34 +443,25 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@transcend-io/privacy-types", [\
-      ["npm:4.143.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@transcend-io-privacy-types-npm-4.143.0-5efdc3af5f-10c0.zip/node_modules/@transcend-io/privacy-types/",\
+      ["npm:5.1.4", {\
+        "packageLocation": "../../.yarn/berry/cache/@transcend-io-privacy-types-npm-5.1.4-9cf0f585e8-10c0.zip/node_modules/@transcend-io/privacy-types/",\
         "packageDependencies": [\
-          ["@transcend-io/internationalization", "npm:2.3.0"],\
-          ["@transcend-io/privacy-types", "npm:4.143.0"],\
-          ["@transcend-io/type-utils", "npm:1.8.4"],\
+          ["@transcend-io/internationalization", "npm:4.0.1"],\
+          ["@transcend-io/privacy-types", "npm:5.1.4"],\
+          ["@transcend-io/type-utils", "npm:3.0.1"],\
           ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"]\
+          ["io-ts", "virtual:bd55ac14ae36f0e530417cc68af7fa9b5b85022f6ee1f29533025507b0e4672b9d87668d21e1f354aff6320853cef2f3870337833186be282eb5d83b5cdf6fd0#npm:2.2.21"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@transcend-io/type-utils", [\
-      ["npm:1.8.4", {\
-        "packageLocation": "../../.yarn/berry/cache/@transcend-io-type-utils-npm-1.8.4-cf70873fba-10c0.zip/node_modules/@transcend-io/type-utils/",\
-        "packageDependencies": [\
-          ["@transcend-io/type-utils", "npm:1.8.4"],\
-          ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:3.0.1", {\
         "packageLocation": "../../.yarn/berry/cache/@transcend-io-type-utils-npm-3.0.1-bd55ac14ae-10c0.zip/node_modules/@transcend-io/type-utils/",\
         "packageDependencies": [\
           ["@transcend-io/type-utils", "npm:3.0.1"],\
           ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"]\
+          ["io-ts", "virtual:bd55ac14ae36f0e530417cc68af7fa9b5b85022f6ee1f29533025507b0e4672b9d87668d21e1f354aff6320853cef2f3870337833186be282eb5d83b5cdf6fd0#npm:2.2.21"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2503,12 +2487,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21", {\
-        "packageLocation": "./.yarn/__virtual__/io-ts-virtual-e1c90a05fa/3/.yarn/berry/cache/io-ts-npm-2.2.21-07353b7269-10c0.zip/node_modules/io-ts/",\
+      ["virtual:bd55ac14ae36f0e530417cc68af7fa9b5b85022f6ee1f29533025507b0e4672b9d87668d21e1f354aff6320853cef2f3870337833186be282eb5d83b5cdf6fd0#npm:2.2.21", {\
+        "packageLocation": "./.yarn/__virtual__/io-ts-virtual-9b485439df/3/.yarn/berry/cache/io-ts-npm-2.2.21-07353b7269-10c0.zip/node_modules/io-ts/",\
         "packageDependencies": [\
           ["@types/fp-ts", null],\
           ["fp-ts", "npm:2.16.1"],\
-          ["io-ts", "virtual:cf70873fba693c45e12eaa2d75c95b8f826f7c6ecae22c907dd641a734cc988a6f014d29b42deaa1743aa40d0580245d37ded40b27610597f1c48d1b1650eed5#npm:2.2.21"]\
+          ["io-ts", "virtual:bd55ac14ae36f0e530417cc68af7fa9b5b85022f6ee1f29533025507b0e4672b9d87668d21e1f354aff6320853cef2f3870337833186be282eb5d83b5cdf6fd0#npm:2.2.21"]\
         ],\
         "packagePeers": [\
           "@types/fp-ts",\
