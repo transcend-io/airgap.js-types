@@ -25,7 +25,7 @@
     "test": "echo 'no tests'"
   },
   "dependencies": {
-    "@transcend-io/type-utils": "^1.8.5",
+    "@transcend-io/type-utils": "^3.0.1",
     "fp-ts": "^2.16.1",
     "io-ts": "^2.2.21"
   },
