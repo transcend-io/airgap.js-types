@@ -29,7 +29,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@transcend-io/airgap.js-types", "workspace:."],\
-          ["@transcend-io/internationalization", "npm:2.3.0"],\
+          ["@transcend-io/internationalization", "npm:4.0.1"],\
           ["@transcend-io/privacy-types", "npm:4.143.0"],\
           ["@transcend-io/type-utils", "npm:3.0.1"],\
           ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
@@ -412,7 +412,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@transcend-io/airgap.js-types", "workspace:."],\
-          ["@transcend-io/internationalization", "npm:2.3.0"],\
+          ["@transcend-io/internationalization", "npm:4.0.1"],\
           ["@transcend-io/privacy-types", "npm:4.143.0"],\
           ["@transcend-io/type-utils", "npm:3.0.1"],\
           ["@typescript-eslint/eslint-plugin", "virtual:d262a2542c3ed3ed86c11b9ff398f7194c0f4f174cdc58addabf550f1f32ecdd3b75fbb2147b0315aab4620df498ccccbb7a830e24e6351590360415ce86dd82#npm:6.13.2"],\
@@ -438,6 +438,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@transcend-io-internationalization-npm-2.3.0-ab5d3c458b-10c0.zip/node_modules/@transcend-io/internationalization/",\
         "packageDependencies": [\
           ["@transcend-io/internationalization", "npm:2.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.0.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@transcend-io-internationalization-npm-4.0.1-558276da2a-10c0.zip/node_modules/@transcend-io/internationalization/",\
+        "packageDependencies": [\
+          ["@transcend-io/internationalization", "npm:4.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
